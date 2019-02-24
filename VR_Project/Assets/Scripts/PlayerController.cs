@@ -42,11 +42,11 @@ public class PlayerController : MonoBehaviour
             bullet.AddForce(Spawn.forward * 1000f);
 
 
-            timer -= 1.0f * Time.deltaTime;
-            if (timer >= 0)
-            {
-                GameObject.Destroy(bullet);
-            }
+            //timer -= 1.0f * Time.deltaTime;
+            //if (timer >= 0)
+            //{
+            //    GameObject.Destroy(bullet);
+            //}
 
         }
     }
