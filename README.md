@@ -1,3 +1,0 @@
-# vrProject
-
-Hello World
