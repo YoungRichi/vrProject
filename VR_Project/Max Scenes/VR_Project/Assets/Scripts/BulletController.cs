@@ -4,44 +4,24 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+    public float timer = 4;
+    public Rigidbody Projectile;
+    [SerializeField] Transform Spawn;
+    public int force;
 
 
-    //public float timer = 4;
-    //public GameObject BulletSpawn;
-    //public GameObject Bullet;
+    void Update()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Rigidbody bullet;
+            bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
+            GetComponent<AudioSource>().Play();
+            bullet.AddForce(Spawn.forward * force);
+            Destroy(bullet.gameObject, 1f);
+        }
+    }
 
 
-    //void Start()
-    //{
-    //    Destroy(this, timer);
-    //}
-
-    //void Update()
-    //{
-    //    if (Input.GetKeyDown("Fire1") == true)
-    //    {
-    //        Instantiate(Bullet, BulletSpawn.transform.position, BulletSpawn.transform.rotation);
-    //    }
-
-//    public Rigidbody Projectile;
-//    public Transform Spawn;
-//    public int force;
-    
-
-//    private void Update()
-//    {
-//        if (Input.GetButtonDown("Fire1"))
-//        {
-//         Rigidbody bullet;
-//         bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
-//         //GetComponent<AudioSource>().Play();
-//         bullet.AddForce(Spawn.forward* force);
-//         Destroy(bullet.gameObject, 1f);
-
-//    //Debug.Log("Bullet Destroyed");
-//}
-//}
-
-    
 }
 

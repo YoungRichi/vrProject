@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HandleInput();
+        //HandleInput();
 
         healthPercentage = (float) currentHealth / (float) maxHealth;
         healthBar.fillAmount = healthPercentage;
@@ -55,20 +55,20 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void HandleInput()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Rigidbody bullet;
-            bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
-            //GetComponent<AudioSource>().Play();
-            bullet.AddForce(Spawn.forward * force);
-            Destroy(bullet.gameObject, 1f);
-            //Debug.Log("Bullet Destroyed");
-        }
+    //void HandleInput()
+    //{
+    //    if (Input.GetButtonDown("Fire1"))
+    //    {
+    //        Rigidbody bullet;
+    //        bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
+    //        //GetComponent<AudioSource>().Play();
+    //        bullet.AddForce(Spawn.forward * force);
+    //        Destroy(bullet.gameObject, 1f);
+    //        //Debug.Log("Bullet Destroyed");
+    //    }
 
 
-    }
+    //}
 
     public void Damage(int damageAmount)
     {
