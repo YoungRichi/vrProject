@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.Counting;
+
+    public Text countdownTimer;
  
     //============================
 
@@ -70,6 +73,11 @@ public class WaveSpawner : MonoBehaviour
         else
         {
             waveCountdown -= Time.deltaTime;
+            countdownTimer.text = waveCountdown.ToString("0");
+            if (waveCountdown <= 0)
+            {
+                countdownTimer.text = "Run!";
+            }
         }
     }
 
