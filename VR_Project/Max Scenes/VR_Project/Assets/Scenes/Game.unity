@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.0408324, g: 0.05068121, b: 0.08365893, a: 1}
+  m_IndirectSpecularColor: {r: 0.04060753, g: 0.050496235, b: 0.083608605, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -111,7 +111,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: a23f0f18dd476b64188d78f50d4c3a55, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 3df49c2f2a998cc48a7bc3aeada7db63, type: 2}
 --- !u!1 &15692783
 GameObject:
   m_ObjectHideFlags: 0
@@ -3504,6 +3504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 1762367855}
+  aim: {fileID: 1611933330}
 --- !u!1 &564390652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4861,7 +4862,7 @@ PrefabInstance:
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.16
+      value: -41.7
       objectReference: {fileID: 0}
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
@@ -4871,7 +4872,7 @@ PrefabInstance:
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -144.6
       objectReference: {fileID: 0}
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
@@ -5224,7 +5225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -7123,7 +7124,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -7545,7 +7546,7 @@ PrefabInstance:
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -17.4
       objectReference: {fileID: 0}
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
@@ -8307,7 +8308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 2
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -9949,17 +9950,17 @@ PrefabInstance:
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 99.7
       objectReference: {fileID: 0}
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -23.78
+      value: -153.6
       objectReference: {fileID: 0}
     - target: {fileID: 2887788036705525719, guid: f0c41a3d709296243bf1c344272c6227,
         type: 3}
