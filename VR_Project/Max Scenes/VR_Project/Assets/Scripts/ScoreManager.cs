@@ -11,9 +11,7 @@ public class ScoreManager : MonoBehaviour
     private static int score1;
     private static int totalScore;
 
-
     public Text txtScore;
-  
 
 
     // Update is called once per frame
@@ -22,7 +20,7 @@ public class ScoreManager : MonoBehaviour
         score = EnemyController.playerScore;
         score1 = PlayerController.currentScore;
         totalScore = score + score1;
-        txtScore.text = "Score: " + totalScore.ToString();
+        txtScore.text = totalScore.ToString();
         //Debug.Log(score);
     }
 }

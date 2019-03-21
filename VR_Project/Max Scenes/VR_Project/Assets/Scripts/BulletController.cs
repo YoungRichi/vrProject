@@ -8,17 +8,43 @@ public class BulletController : MonoBehaviour
     public Rigidbody Projectile;
     [SerializeField] Transform Spawn;
     public int force;
-
+	public float flightSpd = 3.0f; //control bullet projectile speed; multiplicative
+	public bool fireMode = false;
 
     void Update()
     {
+		//toggle fire mode
+		if (Input.GetKeyUp(KeyCode.Q)){
+			if (fireMode == false){
+				fireMode = true;
+				Debug.Log("Switched to burst fire");
+			}
+			else if (fireMode == true){
+				fireMode = false;
+				Debug.Log("Switched to semi auto");
+			}
+		}
         if (Input.GetButtonDown("Fire1"))
         {
-            Rigidbody bullet;
-            bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
-            GetComponent<AudioSource>().Play();
-            bullet.AddForce(Spawn.forward * force);
-            Destroy(bullet.gameObject, 1f);
+			//semi auto
+			if (fireMode == false){
+	            Rigidbody bullet;
+				bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
+	            GetComponent<AudioSource>().Play();
+	            bullet.AddForce(Spawn.forward * force * flightSpd);
+	            Destroy(bullet.gameObject, 1f);
+			}
+			if (fireMode == true){
+				int lewps = 0;
+				while (lewps <= 3){
+					Rigidbody bullet;
+					bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
+					GetComponent<AudioSource>().Play();
+					bullet.AddForce(Spawn.forward * force * flightSpd);
+					Destroy(bullet.gameObject, 1f);
+					lewps++;
+				}
+			}
         }
     }
 
