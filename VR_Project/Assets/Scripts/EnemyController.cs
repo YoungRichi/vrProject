@@ -75,6 +75,21 @@ public class EnemyController : MonoBehaviour
 
         }
     }
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Bullet")
+        {
+            Damage(1);
+            Debug.Log("Ghost Health: " + g_currentHealth);
+            Destroy(other.gameObject);
+            playerScore++;
+
+        }
+    }
+
+
+
+
 
     void Damage(int damageAmount)
     {
