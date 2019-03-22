@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour
 
     public static int currentScore;
 
+    [SerializeField] GameObject Door;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -86,11 +88,17 @@ public class PlayerController : MonoBehaviour
         {
             Damage(1);
         }
-        if (other.tag == "Key")
+        if (other.tag == "Win")
         {
             currentScore += 100;
             Destroy(other.gameObject);
             victoryPanel.SetActive(true);
+        }
+        if (other.tag == "Key")
+        {
+            Destroy(other.gameObject);
+            Door.SetActive(false);
+
         }
     }
 
