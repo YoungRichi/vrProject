@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 850080204952335295}
   - component: {fileID: 850080204952335294}
   - component: {fileID: 5207104425507589878}
+  - component: {fileID: 4808808145992281796}
   m_Layer: 0
   m_Name: ANGRY
   m_TagString: Enemy
@@ -109,7 +110,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &850080204952335295
 MonoBehaviour:
@@ -247,3 +248,15 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!122 &4808808145992281796
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850080204952335264}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4278190328
+  m_Size: 5.3
