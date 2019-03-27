@@ -6,8 +6,8 @@ using UnityEngine.Audio;
 
 public class PlayerController : MonoBehaviour
 {
-    public int maxHealth = 5;
-    public int currentHealth;
+    public float maxHealth = 5;
+    public float currentHealth;
 
     public Rigidbody Projectile;
     public Transform Spawn;
@@ -25,9 +25,10 @@ public class PlayerController : MonoBehaviour
     private float healthPercentage;
 
     public static int currentScore;
+    private bool bleeding = false;
+    
 
     [SerializeField] GameObject Door;
-
     void Start()
     {
         currentHealth = maxHealth;
@@ -46,38 +47,29 @@ public class PlayerController : MonoBehaviour
        // txtScore.text = string.Format()
 
 
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             //Destroy(gameObject);
             Debug.Log("Game Over");
             messagePanel.SetActive(true);
+            //Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
         }
 
-        //Debug.Log(currentScore);
+        if(bleeding == true)
+        {
+            Damage(0.01f);
+        }
+     
 
     }
 
-    //void HandleInput()
-    //{
-    //    if (Input.GetButtonDown("Fire1"))
-    //    {
-    //        Rigidbody bullet;
-    //        bullet = Instantiate(Projectile, Spawn.position, Spawn.rotation);
-    //        //GetComponent<AudioSource>().Play();
-    //        bullet.AddForce(Spawn.forward * force);
-    //        Destroy(bullet.gameObject, 1f);
-    //        //Debug.Log("Bullet Destroyed");
-    //    }
-
-
-    //}
-
-    public void Damage(int damageAmount)
+    public void Damage(float damageAmount)
     {
         currentHealth -= damageAmount;
     }
 
-    public void Heal(int healAmount)
+    public void Heal(float healAmount)
     {
         currentHealth += healAmount;
     }
@@ -99,6 +91,11 @@ public class PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             Door.SetActive(false);
 
+        }
+        if (other.tag == "DoorScan")
+        {
+            Door.SetActive(true);
+            bleeding = true;
         }
     }
 
