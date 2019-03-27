@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class WaveSpawner : MonoBehaviour
 {
+    AudioSource audioSource;
+
     public enum SpawnState
     {
         Spawning,
@@ -42,6 +45,7 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         waveCountdown = timeBetweenWaves;
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -84,7 +88,8 @@ public class WaveSpawner : MonoBehaviour
     void WaveCompleted()
     {
         Debug.Log("Wave Comepleted!");
-
+        playWaveSound();
+       
         state = SpawnState.Counting;
         waveCountdown = timeBetweenWaves;
 
@@ -137,6 +142,10 @@ public class WaveSpawner : MonoBehaviour
         //Instantiate(_enemy, transform.position, transform.rotation);
         Instantiate(_enemy, _sp.position, _sp.rotation);
 
+    }
+
+    void playWaveSound() {
+        audioSource.Play();
     }
 
 }
