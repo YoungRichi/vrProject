@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
 {
     public float maxHealth = 5;
     public float currentHealth;
+    public float damageCoef = 0.001f;
 
     public Rigidbody Projectile;
     public Transform Spawn;
@@ -49,16 +50,17 @@ public class PlayerController : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            Time.timeScale = 0;
             //Destroy(gameObject);
             Debug.Log("Game Over");
             messagePanel.SetActive(true);
             //Destroy(this.gameObject);
-            this.gameObject.SetActive(false);
+            
         }
 
         if(bleeding == true)
         {
-            Damage(0.01f);
+            Damage(damageCoef);
         }
      
 
