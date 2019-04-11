@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 895b9c181edd9814f947b015b3e5cd88
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - muzzleFlash: {fileID: 8698418010932320770, guid: f0e1871853feacc42b3c44c3724a65ce,
+      type: 3}
+  - Projectile: {instanceID: 0}
+  - Spawn: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
