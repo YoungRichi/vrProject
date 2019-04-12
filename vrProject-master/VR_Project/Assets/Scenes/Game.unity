@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.04060753, g: 0.050496235, b: 0.083608605, a: 1}
+  m_IndirectSpecularColor: {r: 0.0408324, g: 0.05068121, b: 0.08365893, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8991,7 +8991,7 @@ PrefabInstance:
     - target: {fileID: 4454162402734749338, guid: 943959c6b19b23f439ff7447c07aeada,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.3
+      value: -6.3
       objectReference: {fileID: 0}
     - target: {fileID: 4454162402734749338, guid: 943959c6b19b23f439ff7447c07aeada,
         type: 3}
@@ -9001,7 +9001,7 @@ PrefabInstance:
     - target: {fileID: 4454162402734749338, guid: 943959c6b19b23f439ff7447c07aeada,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.4
+      value: -13.7
       objectReference: {fileID: 0}
     - target: {fileID: 4454162402734749338, guid: 943959c6b19b23f439ff7447c07aeada,
         type: 3}
@@ -17850,8 +17850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477a941a1dd671243b05b6bd911c7486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyObject: {fileID: 4397507040762226285, guid: aa98b69010a18f24f9b8af51bda595ef,
-    type: 3}
+  keyObject: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
   spawnkeyPoints:
   - {fileID: 1431902105}
   - {fileID: 1462875995}
