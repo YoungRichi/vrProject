@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     private static int score;
     private static int score1;
     private static int totalScore;
-
+    public GameObject Key;
     public Text txtScore;
 
 
@@ -22,5 +22,15 @@ public class ScoreManager : MonoBehaviour
         totalScore = score + score1;
         txtScore.text = totalScore.ToString();
         //Debug.Log(score);
+
+        
+    }
+
+    void OnTriggerEnter(Collider collider)
+    {
+        //if (collider.gameObject.tag == "Player")
+        //{
+            Key.SetActive(true);
+        //}
     }
 }
