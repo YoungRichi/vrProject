@@ -1,0 +1,3 @@
+Push feature to Github
+Create Pull request to development
+Get approved
