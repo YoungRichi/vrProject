@@ -2,6 +2,7 @@
 //#include "sysinfoapi.h"
 #include <windows.h>
 #include <stdio.h>
+#include <process.h>
 #include <tchar.h>
 #define DIV 1024
 #define WIDTH 7
@@ -51,3 +52,25 @@ bool GameApp::CheckMemory()
 	system("pause");
 	return true;
 }
+
+bool GameApp::bIsOnlyInstance()
+{
+	HANDLE hMutex = CreateMutex(NULL, FALSE, "Orange Engine");
+
+	if (hMutex == NULL)
+	{
+		std::cout << ("error: %d\n", GetLastError());
+		return false;
+	}
+	else if (GetLastError() == ERROR_ALREADY_EXISTS)
+	{
+		std::cout << ("Orange Engine opened existing window\n");
+		return false;
+	}
+	else
+	{
+		std::cout << ("Orange Engine created new window\n");
+		return true;
+	}
+}
+

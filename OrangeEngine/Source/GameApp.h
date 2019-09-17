@@ -1,11 +1,14 @@
 #pragma once
+
+
 class GameApp
 {
 public:
 	GameApp();
 	~GameApp();
 
-	bool bIsOnlyInstance;
+	bool bIsOnlyInstance();
+
 	void InitInstance();
 	bool CheckMemory(); 
 
