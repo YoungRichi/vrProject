@@ -350,3 +350,4 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+OrangeEngine/Source/OrangeEngine/.vs/OrangeEngine/v15/Browse.VC.db

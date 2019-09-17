@@ -7,6 +7,7 @@ public:
 
 	bool bIsOnlyInstance;
 	void InitInstance();
+	bool CheckMemory(); 
 
 
 protected:

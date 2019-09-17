@@ -134,11 +134,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\GameApp.cpp" />
     <ClCompile Include="..\..\main.cpp" />
-    <ClCompile Include="GameApp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GameApp.h" />
+    <ClInclude Include="..\..\GameApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
