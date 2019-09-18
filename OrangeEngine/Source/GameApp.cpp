@@ -1,6 +1,6 @@
-#include "GameApp.h"
+﻿#include "GameApp.h"
 //#include "sysinfoapi.h"
-#include <windows.h>
+//#include <windows.h>
 #include <stdio.h>
 #include <process.h>
 #include <tchar.h>
@@ -10,7 +10,7 @@
 using namespace std;
 GameApp::GameApp()
 {
-	bIsOnlyInstance = true;
+	//bIsOnlyInstance = true;
 }
 
 
@@ -48,10 +48,26 @@ bool GameApp::CheckMemory()
 
 	_tprintf(TEXT("There are %*I64d free  KB of extended memory.\n"),
 		WIDTH, status.ullAvailExtendedVirtual / DIV);
-	
-	system("pause");
 	return true;
 }
+
+void GameApp::CPUSpeedRead()
+{
+	DWORD BufSize = sizeof(DWORD);
+	DWORD dwMHz = 0;
+	DWORD type = REG_DWORD;
+	HKEY hKey;
+
+	long lError = RegOpenKeyEx(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0", 0, KEY_READ, &hKey);
+	if (lError == ERROR_SUCCESS)
+	{
+		RegQueryValueEx(hKey, "~MHz", NULL, &type, (LPBYTE)& dwMHz, &BufSize);
+	}
+	cout << "The CPU speed is: "<<dwMHz << " MHz;"<<endl;
+	system("pause");
+}
+
+
 
 bool GameApp::bIsOnlyInstance()
 {

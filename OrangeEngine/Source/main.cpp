@@ -5,6 +5,7 @@ int main()
 {
 	GameApp myGame;
 	myGame.CheckMemory();
+	myGame.CPUSpeedRead();
 	std::cout << "Hello, World!" << std::endl;
 	//create GameApp obj
 	//run Init()

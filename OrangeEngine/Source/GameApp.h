@@ -1,5 +1,5 @@
 #pragma once
-
+#include <windows.h>
 
 class GameApp
 {
@@ -11,10 +11,12 @@ public:
 
 	void InitInstance();
 	bool CheckMemory(); 
+	void CPUSpeedRead();
 
 
 protected:
-
+	
+	
 
 };
 
