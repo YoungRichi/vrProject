@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "GameApp.h"
 
@@ -10,6 +11,7 @@ int main()
 	//create GameApp obj
 	//run Init()
 	myGame.bIsOnlyInstance();
+	myGame.CheckStorage();
 
 	return 0;
 }
