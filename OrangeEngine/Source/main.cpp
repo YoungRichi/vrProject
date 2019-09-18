@@ -1,9 +1,11 @@
-#include <iostream>
+#include "GameApp.h"
+
 
 int main()
 {
-
-	std::cout << "Hello, World!" << std::endl;
+	GameApp myApp;
+	myApp.CheckStorage();
+	//std::cout << "Hello, World!" << std::endl;
 
 	return 0;
 }
