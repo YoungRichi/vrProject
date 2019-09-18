@@ -10,6 +10,6 @@ int main()
 	//create GameApp obj
 	//run Init()
 	myGame.bIsOnlyInstance();
-
+	system("pause");
 	return 0;
 }

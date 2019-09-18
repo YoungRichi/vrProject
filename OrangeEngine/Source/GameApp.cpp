@@ -64,7 +64,7 @@ void GameApp::CPUSpeedRead()
 		RegQueryValueEx(hKey, "~MHz", NULL, &type, (LPBYTE)& dwMHz, &BufSize);
 	}
 	cout << "The CPU speed is: "<<dwMHz << " MHz;"<<endl;
-	system("pause");
+	
 }
 
 
