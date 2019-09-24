@@ -12,6 +12,7 @@ public:
 	void InitInstance();
 	bool CheckMemory(); 
 	void CPUSpeedRead();
+	void SystemInfo();
 
 
 protected:
