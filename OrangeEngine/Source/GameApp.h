@@ -13,6 +13,7 @@ public:
 	void CPUSpeedRead();
 	void CheckStorage();
 
+
 protected:
 	
 	

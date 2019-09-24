@@ -28,6 +28,7 @@ void GameApp::InitInstance()
 bool GameApp::CheckMemory()
 {
 	MEMORYSTATUSEX status; 
+	status.dwLength = sizeof(status);
 	GlobalMemoryStatusEx(&status);
 	
 	_tprintf(TEXT("There is  %*ld percent of memory in use.\n"),
@@ -91,6 +92,9 @@ bool GameApp::bIsOnlyInstance()
 	}
 }
 
+
+
+
 TCHAR   g_szBorder[] = _T("======================================================================\n");
 TCHAR   g_szTitle1[] = _T("|DRIVE|TOTAL CLUSTERS|AVAIL CLUSTERS|SECTORS / CLUSTER|BYTES / SECTOR|\n");
 TCHAR   g_szTitle2[] = _T("|=====|==============|==============|=================|==============|\n");
@@ -139,7 +143,7 @@ void GameApp::CheckStorage()
 	printf(g_szBorder);
 
 	int bytes_per_megabyte = 1048576;
-	int neededBytes = 300 * bytes_per_megabyte;
+	int neededBytes = 3000000 * bytes_per_megabyte;
 	int neededClusters = neededBytes / (df.bytes_per_sector * df.sectors_per_cluster);
 	int avail_bytes = df.avail_clusters * df.bytes_per_sector * df.sectors_per_cluster;
 
@@ -152,6 +156,8 @@ void GameApp::CheckStorage()
 	else
 		std::cout << "Not enough disk storage memory" << std::endl;
 }
+
+
 
 void utoiRightJustified(TCHAR* szLeft, TCHAR* szRight, unsigned uVal) {
 	TCHAR* szCur = szRight;
