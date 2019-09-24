@@ -142,15 +142,19 @@ void GameApp::CheckStorage()
 
 	printf(g_szBorder);
 
-	int bytes_per_megabyte = 1048576;
-	int neededBytes = 3000000 * bytes_per_megabyte;
-	int neededClusters = neededBytes / (df.bytes_per_sector * df.sectors_per_cluster);
-	int avail_bytes = df.avail_clusters * df.bytes_per_sector * df.sectors_per_cluster;
+
+	LONGLONG freeMegabytesNeeded = 300;
+	LONGLONG bytes_per_megabyte = 1048576;
+	LONGLONG neededBytes = freeMegabytesNeeded * bytes_per_megabyte;
+	LONGLONG neededClusters = neededBytes / (df.bytes_per_sector * df.sectors_per_cluster);
+	LONGLONG avail_bytes = df.avail_clusters * df.bytes_per_sector * df.sectors_per_cluster;
+
 
 
 	//76800 clusters needed
 	if (df.avail_clusters >= neededClusters) {
 		std::cout << "You need " << neededClusters << " clusters" << std::endl;
+		std::cout << df.avail_clusters << " available clusters" << std::endl;
 		std::cout << "You have enough disk storage memory" << std::endl;
 	}
 	else
