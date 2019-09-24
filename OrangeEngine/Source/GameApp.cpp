@@ -8,6 +8,8 @@
 #define WIDTH 7
 #include <iostream>
 #include <direct.h>
+#include "intrin.h"
+
 using namespace std;
 GameApp::GameApp()
 {
@@ -66,10 +68,34 @@ void GameApp::CPUSpeedRead()
 		RegQueryValueEx(hKey, "~MHz", NULL, &type, (LPBYTE)& dwMHz, &BufSize);
 	}
 	cout << "The CPU speed is: "<<dwMHz << " MHz;"<<endl;
-	
+
 }
 
+void GameApp::SystemInfo()
+{
+	int CPUInfo[4] = { -1 };
+	char CPUBrandString[0x40];
+	__cpuid(CPUInfo, 0x80000000);
+	unsigned int nExIds = CPUInfo[0];
 
+	memset(CPUBrandString, 0, sizeof(CPUBrandString));
+
+	// Get the information associated with each extended ID.
+	for (int i = 0x80000000; i <= nExIds; ++i)
+	{
+		__cpuid(CPUInfo, i);
+		// Interpret CPU brand string.
+		if (i == 0x80000002)
+			memcpy(CPUBrandString, CPUInfo, sizeof(CPUInfo));
+		else if (i == 0x80000003)
+			memcpy(CPUBrandString + 16, CPUInfo, sizeof(CPUInfo));
+		else if (i == 0x80000004)
+			memcpy(CPUBrandString + 32, CPUInfo, sizeof(CPUInfo));
+	}
+
+	cout << CPUBrandString << endl;
+	system("pause");
+}
 
 bool GameApp::bIsOnlyInstance()
 {

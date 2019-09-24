@@ -14,9 +14,12 @@ int main()
 	myGame.CheckMemory();
 	myGame.CPUSpeedRead();
 	myGame.CheckStorage();
+	myGame.SystemInfo();
+
 	std::cout << "Hello, World!" << std::endl;
 	//create GameApp obj
 	//run Init()
+
 
 	
 	system("pause");

@@ -12,6 +12,8 @@ public:
 	bool CheckMemory(); 
 	void CPUSpeedRead();
 	void CheckStorage();
+	void SystemInfo();
+
 
 
 protected:
