@@ -16,6 +16,9 @@
     <Filter Include="Actors">
       <UniqueIdentifier>{e7148f99-4392-492b-980a-1dfc1ab40cdb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Animation">
+      <UniqueIdentifier>{7d7b2347-b059-4c7d-a8bb-5446657f34cd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp">
@@ -33,6 +36,9 @@
     <ClCompile Include="PrinterScriptingComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SplashScreen.cpp">
+      <Filter>Animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\GameApp.h">
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="PrinterScriptingComponent.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashScreen.h">
+      <Filter>Animation</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

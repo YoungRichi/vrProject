@@ -158,6 +158,7 @@
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="PrinterScriptingComponent.cpp" />
     <ClCompile Include="ScriptingComponent.cpp" />
+    <ClCompile Include="SplashScreen.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Actors\AbilitiesInterface.h" />
@@ -165,6 +166,7 @@
     <ClInclude Include="..\..\GameApp.h" />
     <ClInclude Include="PrinterScriptingComponent.h" />
     <ClInclude Include="ScriptingComponent.h" />
+    <ClInclude Include="SplashScreen.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
