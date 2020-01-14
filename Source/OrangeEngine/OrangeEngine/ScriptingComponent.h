@@ -1,23 +1,22 @@
-#define _CRT_SECURE_NO_WARNINGS
-#pragma once
-#include "LuaPlus/LuaPlus.h"
-#include <string>
-
+#ifndef __SCRIPT_SYSTEM_H__
+#define __SCRIPT_SYSTEM_H__
+#include <vector>
+#include "Actor.h"
+#include "../OrangeEngine/ScriptComponent.h"
+#include "LuaPlus.h"
+#include "../../OrangeEngine.h"
+using namespace LuaPlus;
 
 class ScriptingComponent
 {
-private:
-
-	LuaPlus::LuaState* pLuaState;
-
-protected:
-	virtual void InterpretResult(LuaPlus::LuaObject result) = 0;
-	virtual LuaPlus::LuaObject BuildContext(LuaPlus::LuaState* state) = 0;
-
 public:
-	void runScript(const std::string& name);
+	ScriptingComponent(vector<Actor*>* _actors);
+	~ScriptingComponent();
+	void Run();
 
-	ScriptingComponent();
-	virtual ~ScriptingComponent();
+private:
+	vector<Actor*>* actors;
+	LuaState* pLuaState;
 };
 
+#endif

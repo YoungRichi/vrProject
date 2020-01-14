@@ -97,8 +97,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SFML-2.5.1\include;$(ProjectDir)\LuaPlus;$(ProjectDir)\LuaPlus\src;$(ProjectDir)\LuaPlus\tilde;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>SFML_STATIC;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <AdditionalDependencies>LuaPlus.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -125,9 +126,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SFML-2.5.1\include;$(ProjectDir)\LuaPlus;$(ProjectDir)\LuaPlus\src;$(ProjectDir)\LuaPlus\tilde;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -154,19 +156,30 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Actors\SpecialAbilityComponent.cpp" />
-    <ClCompile Include="..\..\GameApp.cpp" />
+    <ClCompile Include="..\..\OrangeEngine.cpp" />
     <ClCompile Include="..\..\main.cpp" />
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="Draw.cpp" />
     <ClCompile Include="PrinterScriptingComponent.cpp" />
+    <ClCompile Include="ShapeComponent.cpp" />
+    <ClCompile Include="ScriptComponent.cpp" />
     <ClCompile Include="ScriptingComponent.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Actors\AbilitiesInterface.h" />
     <ClInclude Include="..\..\Actors\SpecialAbilityComponent.h" />
-    <ClInclude Include="..\..\GameApp.h" />
+    <ClInclude Include="..\..\OrangeEngine.h" />
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="ActorComponent.h" />
+    <ClInclude Include="Draw.h" />
     <ClInclude Include="PrinterScriptingComponent.h" />
+    <ClInclude Include="ShapeComponent.h" />
+    <ClInclude Include="ScriptComponent.h" />
     <ClInclude Include="ScriptingComponent.h" />
     <ClInclude Include="SplashScreen.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

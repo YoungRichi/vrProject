@@ -18,10 +18,10 @@ LuaPlus::LuaObject PrinterScriptingComponent::BuildContext(LuaPlus::LuaState* st
 	return context;
 }
 
-PrinterScriptingComponent::PrinterScriptingComponent(std::string text)
-	: text(text)
-{
-}
+//PrinterScriptingComponent::PrinterScriptingComponent(std::string text)
+//	: text(text)
+//{
+//}
 
 
 PrinterScriptingComponent::~PrinterScriptingComponent()

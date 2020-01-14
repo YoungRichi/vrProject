@@ -19,12 +19,24 @@
     <Filter Include="Animation">
       <UniqueIdentifier>{7d7b2347-b059-4c7d-a8bb-5446657f34cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components">
+      <UniqueIdentifier>{c1141a7a-3408-4fe5-9539-6d17271fa2ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Actor">
+      <UniqueIdentifier>{238bb14c-62d6-473a-9268-40e61e1541df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Transform">
+      <UniqueIdentifier>{82b58641-4b2d-4984-b3f6-6e1e3bdf1536}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Draw">
+      <UniqueIdentifier>{03aa6ae1-2d7f-49ef-8bb9-835c7cce53af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Components\Shape">
+      <UniqueIdentifier>{e3b31332-d94b-427c-a938-7406dc3cd0de}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\GameApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Actors\SpecialAbilityComponent.cpp">
@@ -39,14 +51,26 @@
     <ClCompile Include="SplashScreen.cpp">
       <Filter>Animation</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\OrangeEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Components\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Transform.cpp">
+      <Filter>Components\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptComponent.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Draw.cpp">
+      <Filter>Draw</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeComponent.cpp">
+      <Filter>Components\Shape</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\GameApp.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ScriptingComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\Actors\SpecialAbilityComponent.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -58,6 +82,30 @@
     </ClInclude>
     <ClInclude Include="SplashScreen.h">
       <Filter>Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\OrangeEngine.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ActorComponent.h">
+      <Filter>Components\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>Components\Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Transform.h">
+      <Filter>Components\Transform</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptComponent.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Draw.h">
+      <Filter>Draw</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptingComponent.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeComponent.h">
+      <Filter>Components\Shape</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
