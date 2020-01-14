@@ -1,20 +1,20 @@
-#include "ScriptingComponent.h"
+#include "ScriptingSystem.h"
 
 
 
-ScriptingComponent::ScriptingComponent(vector<Actor*>* _actors)
+ScriptingSystem::ScriptingSystem(vector<Actor*>* _actors)
 {
 	actors = _actors;
 	pLuaState = LuaState::Create();
 }
 
-ScriptingComponent::~ScriptingComponent()
+ScriptingSystem::~ScriptingSystem()
 {
 	LuaState::Destroy(pLuaState);
 	pLuaState = NULL;
 }
 
-void ScriptingComponent::Run()
+void ScriptingSystem::Run()
 {
 	vector<Actor*>::iterator it;
 	for (it = actors->begin(); it != actors->end(); it++)

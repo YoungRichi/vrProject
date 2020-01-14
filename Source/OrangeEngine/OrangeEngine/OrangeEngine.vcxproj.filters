@@ -42,9 +42,6 @@
     <ClCompile Include="..\..\Actors\SpecialAbilityComponent.cpp">
       <Filter>Actors</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptingComponent.cpp">
-      <Filter>Actors</Filter>
-    </ClCompile>
     <ClCompile Include="PrinterScriptingComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -68,6 +65,12 @@
     </ClCompile>
     <ClCompile Include="ShapeComponent.cpp">
       <Filter>Components\Shape</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptingSystem.cpp">
+      <Filter>Actors</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene1.cpp">
+      <Filter>Draw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -101,11 +104,14 @@
     <ClInclude Include="Draw.h">
       <Filter>Draw</Filter>
     </ClInclude>
-    <ClInclude Include="ScriptingComponent.h">
-      <Filter>Actors</Filter>
-    </ClInclude>
     <ClInclude Include="ShapeComponent.h">
       <Filter>Components\Shape</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptingSystem.h">
+      <Filter>Actors</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene1.h">
+      <Filter>Draw</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

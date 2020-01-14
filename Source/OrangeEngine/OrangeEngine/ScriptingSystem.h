@@ -7,11 +7,11 @@
 #include "../../OrangeEngine.h"
 using namespace LuaPlus;
 
-class ScriptingComponent
+class ScriptingSystem
 {
 public:
-	ScriptingComponent(vector<Actor*>* _actors);
-	~ScriptingComponent();
+	ScriptingSystem(vector<Actor*>* _actors);
+	~ScriptingSystem();
 	void Run();
 
 private:

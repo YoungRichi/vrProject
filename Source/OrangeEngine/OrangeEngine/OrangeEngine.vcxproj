@@ -161,9 +161,10 @@
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="PrinterScriptingComponent.cpp" />
+    <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="ShapeComponent.cpp" />
     <ClCompile Include="ScriptComponent.cpp" />
-    <ClCompile Include="ScriptingComponent.cpp" />
+    <ClCompile Include="ScriptingSystem.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="Transform.cpp" />
   </ItemGroup>
@@ -175,9 +176,10 @@
     <ClInclude Include="ActorComponent.h" />
     <ClInclude Include="Draw.h" />
     <ClInclude Include="PrinterScriptingComponent.h" />
+    <ClInclude Include="Scene1.h" />
     <ClInclude Include="ShapeComponent.h" />
     <ClInclude Include="ScriptComponent.h" />
-    <ClInclude Include="ScriptingComponent.h" />
+    <ClInclude Include="ScriptingSystem.h" />
     <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="Transform.h" />
   </ItemGroup>

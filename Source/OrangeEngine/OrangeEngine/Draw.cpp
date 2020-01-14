@@ -4,10 +4,9 @@
 #include "Draw.h"
 #include "ShapeComponent.h"
 
-Draw::Draw(string _szTitle)
+Draw::Draw()
 {
-	szTitle = _szTitle;
-	window = new sf::RenderWindow(sf::VideoMode(1080, 960), szTitle, sf::Style::None);
+	window = new sf::RenderWindow(sf::VideoMode(1080, 960), "Orange Engine", sf::Style::None);
 }
 
 Draw::~Draw() {
@@ -16,7 +15,7 @@ Draw::~Draw() {
 
 void Draw::WindowCreate()
 {
-	window = new sf::RenderWindow(sf::VideoMode(1080, 960), szTitle);
+	window = new sf::RenderWindow(sf::VideoMode(1080, 960), "Orange Engine");
 }
 
 void Draw::WindowClose()

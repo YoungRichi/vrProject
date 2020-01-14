@@ -1,8 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #pragma once
-#include "ScriptingComponent.h"
+#include "ScriptingSystem.h"
 class PrinterScriptingComponent :
-	public ScriptingComponent
+	public ScriptingSystem
 {
 private:
 	std::string text;

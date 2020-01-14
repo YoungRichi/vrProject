@@ -22,7 +22,7 @@ private:
 	string szTitle;
 
 public:
-	Draw(string _szTitle);
+	Draw();
 	~Draw();
 	void WindowCreate();
 	void WindowClose();

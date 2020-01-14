@@ -7,7 +7,7 @@
 #include <strsafe.h>
 #include <tchar.h>
 #include <string>
-#include "OrangeEngine/OrangeEngine/ScriptingComponent.h"
+#include "OrangeEngine/OrangeEngine/ScriptingSystem.h"
 #include <time.h>
 
 using namespace std;
@@ -245,24 +245,24 @@ bool OrangeEngine::InitInstance(HINSTANCE _hInstance, HINSTANCE _previousInstanc
 
 void OrangeEngine::Run()
 {
-	Draw rs(szTitle);
-	ScriptingComponent sc(&actors);
+	Draw d;
+	ScriptingSystem ss(&actors);
 	
-	sc.Run();
+	ss.Run();
 
-	rs.RenderSplashScreen();
+	d.RenderSplashScreen();
 
-	rs.WindowCreate();
+	d.WindowCreate();
 
 	float oldTime = 0;
 	float deltaTime;
-	while (rs.IsWindowOpen())
+	while (d.IsWindowOpen())
 	{
 		sf::Event event;
-		while (rs.window->pollEvent(event))
+		while (d.window->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
-				rs.WindowClose();
+				d.WindowClose();
 		}
 	
 		deltaTime = clock() - oldTime;
@@ -271,7 +271,7 @@ void OrangeEngine::Run()
 		{
 			(*it)->Update(deltaTime);
 		}
-		rs.RenderActors(&actors);
+		d.RenderActors(&actors);
 	}
 }
 
