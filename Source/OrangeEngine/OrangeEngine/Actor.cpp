@@ -7,9 +7,9 @@ Actor::Actor()
 {
 	CoCreateGuid(&id);
 	parent = NULL;
-	tc = new Transform();
+	position = new Transform();
 	worldTransform = new sf::Transform();
-	localTransform = &(tc->transform);
+	localTransform = &(position->transform);
 }
 
 Actor::~Actor(void)

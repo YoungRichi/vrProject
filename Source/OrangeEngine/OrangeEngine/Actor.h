@@ -28,7 +28,7 @@ public:
 	void SetParent(Actor* p) { parent = p; }
 	void AddChild(Actor* s);
 	virtual void Update(float msec);
-	Transform* tc;
+	Transform* position;
 
 protected:
 	Actor* parent;

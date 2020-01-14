@@ -26,23 +26,22 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE previousInstance, PSTR cmdLi
 		
 		Actor* sun = new Actor();
 		sun->AddComponent(new ShapeComponent(10,20, sf::Color::Red));
-		sun->tc->Translate(200, 200);
-		sun->tc->Scale(10, 10);
+		sun->position->Translate(100, 100);
+		sun->position->Scale(10, 10);
 		
 		Actor* moon = new Actor();
 		moon->AddComponent(new ShapeComponent(10,4,sf::Color::Blue));
-		moon->tc->Translate(-10, 10);
-		moon->tc->Scale(0.3, 0.3);
+		moon->position->Translate(50, 10);
+		moon->position->Scale(0.3, 0.3);
 		sun->AddChild(moon);
-		sun->tc->Translate(300, 200);
+		sun->position->Translate(200, 200);
 		//sun->tc->Rotate(90);
 		
 		Actor* star = new Actor();
 		star->AddComponent(new ShapeComponent(10, 5, sf::Color::Yellow));
-		star->tc->Translate(-10, 10);
-		star->tc->Scale(0.5, 0.5);
+		star->position->Translate(-10, -10);
+		star->position->Scale(0.5, 0.5);
 		moon->AddChild(star);
-		//moon->tc->Translate(300, 200);
 
 		Orange->AddActor(sun);
 		Orange->AddActor(moon);
