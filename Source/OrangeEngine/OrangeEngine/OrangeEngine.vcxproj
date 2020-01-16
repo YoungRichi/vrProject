@@ -160,6 +160,12 @@
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="GameObject.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="GameObjectManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="PrinterScriptingComponent.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="ShapeComponent.cpp" />
@@ -175,6 +181,12 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="ActorComponent.h" />
     <ClInclude Include="Draw.h" />
+    <ClInclude Include="GameObject.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="GameObjectManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="PrinterScriptingComponent.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="ShapeComponent.h" />
