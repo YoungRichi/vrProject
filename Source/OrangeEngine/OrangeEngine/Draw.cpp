@@ -6,7 +6,7 @@
 
 Draw::Draw()
 {
-	window = new sf::RenderWindow(sf::VideoMode(1080, 960), "Orange Engine", sf::Style::None);
+	window = new sf::RenderWindow(sf::VideoMode(800, 600), "Orange Engine", sf::Style::None);
 }
 
 Draw::~Draw() {
@@ -15,7 +15,7 @@ Draw::~Draw() {
 
 void Draw::WindowCreate()
 {
-	window = new sf::RenderWindow(sf::VideoMode(1080, 960), "Orange Engine");
+	window = new sf::RenderWindow(sf::VideoMode(800, 600), "Orange Engine");
 }
 
 void Draw::WindowClose()
@@ -40,7 +40,6 @@ void Draw::RenderSplashScreen()
 	sf::Sprite sp;
 	sp.setTexture(logo);
 	sp.scale(1, 1); // My logo is quite big in fact (1st google result btw)
-
 	int logoWidth = sp.getGlobalBounds().width;
 	int logoHeight = sp.getGlobalBounds().height;
 
