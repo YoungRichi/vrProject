@@ -17,6 +17,10 @@
 Scene1 *ss;
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE previousInstance, PSTR cmdLine, INT nCmdShow)
 {
+
+
+
+
 	//create an instance of engine 
 	// init engine
 	//orangeengine.createscene/loadscene (file name/scene name)
