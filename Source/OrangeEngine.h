@@ -8,7 +8,6 @@
 #include "OrangeEngine/OrangeEngine/SplashScreen.h"
 #include <vector>
 #include "OrangeEngine/OrangeEngine/Actor.h"
-#include "OrangeEngine/OrangeEngine/Scene1.h"
 
 using namespace std;
 
@@ -38,11 +37,6 @@ private:
 	~OrangeEngine();
 	static OrangeEngine* instance;
 	vector<Actor*> actors;
-	//------------------------------------
-
-	static const sf::Time TimePerFrame;
-	void update(sf::Time elapsedTime);
-	Scene1 scene1;
 
 public:
 	static OrangeEngine* GetInstance();

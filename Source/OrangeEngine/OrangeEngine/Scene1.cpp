@@ -46,9 +46,3 @@ void Scene1::buildScene()
 	delete(sun);
 
 }
-
-void Scene1::update(sf::Time dt)
-{
-	
-}
-

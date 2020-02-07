@@ -167,7 +167,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
     </ClCompile>
     <ClCompile Include="PrinterScriptingComponent.cpp" />
-    <ClCompile Include="Rigidbody.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="ShapeComponent.cpp" />
     <ClCompile Include="ScriptComponent.cpp" />
@@ -189,7 +188,6 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="PrinterScriptingComponent.h" />
-    <ClInclude Include="Rigidbody.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="ShapeComponent.h" />
     <ClInclude Include="ScriptComponent.h" />
