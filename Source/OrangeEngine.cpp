@@ -9,10 +9,15 @@
 #include <string>
 #include "OrangeEngine/OrangeEngine/ScriptingSystem.h"
 #include <time.h>
+#include <SFML/Window/Event.hpp>
 
 using namespace std;
+const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
+
+
 
 OrangeEngine* OrangeEngine::instance = 0;
+
 OrangeEngine* OrangeEngine::GetInstance()
 {
 	if (!instance)
@@ -255,24 +260,54 @@ void OrangeEngine::Run()
 	d.WindowCreate();
 
 	float oldTime = 0;
-	float deltaTime;
+	float deltaTime = clock() - oldTime;
+	oldTime = clock();
 	while (d.IsWindowOpen())
 	{
-		sf::Event event;
-		while (d.window->pollEvent(event))
+		sf::Clock clock;
+		sf::Time timeSinceLastUpdate = sf::Time::Zero;
+		while (d.window->isOpen())
 		{
-			if (event.type == sf::Event::Closed)
-				d.WindowClose();
+			sf::Time elapsedTime = clock.restart();
+			timeSinceLastUpdate += elapsedTime;
+			//deltaTime += elapsedTime.asSeconds;
+			while (timeSinceLastUpdate > TimePerFrame)
+			{
+				timeSinceLastUpdate -= TimePerFrame;
+				update(TimePerFrame);
+				//processEvents(); Handle Input Here
+				for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
+					{
+						(*it)->Update(deltaTime);
+					}
+				
+				d.RenderActors(&actors);
+			}
+
+			//updateStatistics(elapsedTime);
+			//render();
 		}
+
+		//sf::Event event;
+		//while (d.window->pollEvent(event))
+		//{
+		//	if (event.type == sf::Event::Closed)
+		//		d.WindowClose();
+		//}
 	
-		deltaTime = clock() - oldTime;
-		oldTime = clock();
-		for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
-		{
-			(*it)->Update(deltaTime);
-		}
-		d.RenderActors(&actors);
+		//deltaTime = clock() - oldTime;
+		//oldTime = clock();
+		//for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
+		//{
+		//	(*it)->Update(deltaTime);
+		//}
+		//d.RenderActors(&actors);
 	}
+}
+
+void OrangeEngine::update(sf::Time elapsedTime)
+{
+	//scene1.update(elapsedTime);
 }
 
 void OrangeEngine::AddActor(Actor* _actor)

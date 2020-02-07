@@ -1,27 +1,26 @@
-#include "Rigidbody.h"
+#include "oRigidbody.h"
 #include "../../OrangeEngine.h"
 #include "../GameObjectManager.h"
- 
+
 
 GameObjectManager* gm;
 
 
-Rigidbody::Rigidbody()
+oRigidBody::oRigidBody()
 {
 }
 
 
-Rigidbody::~Rigidbody()
+oRigidBody::~oRigidBody()
 {
 }
 
-void Rigidbody::AddForce(sf::Vector2<float> force)
+void oRigidBody::AddForce(sf::Vector2<float> force)
 {
-	totalForces += force;
+	totalForces = sf::Vector2f(111, 1);// += force;
 }
 
-void Rigidbody::Integrate(float dT) {
-
+void oRigidBody::Integrate(float dT) {
 	/*if (obeysGravity && !IsGrounded()) {
 		acceleration = gravity;
 	}
@@ -29,10 +28,13 @@ void Rigidbody::Integrate(float dT) {
 		if (Mathf.Abs(currentVelocity.y) < 0.05f)
 			currentVelocity.y = 0;
 	}*/
-
-	acceleration += totalForces / gm->mass;
-	if (gm->mass == 0)
-		acceleration = sf::Vector2f (0,0);
+	float mass = 1.0f;
+	//if (mass == NULL)
+	//	return;
+		//acceleration += totalForces / mass;
+		acceleration = sf::Vector2f(10,1);
+	if (mass == 0)
+		acceleration = sf::Vector2f(0, 0);
 
 	currentVelocity += acceleration * dT;
 

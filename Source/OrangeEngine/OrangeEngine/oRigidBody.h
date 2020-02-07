@@ -1,15 +1,15 @@
 #pragma once
 #include "SFML/Graphics/Transform.hpp"
 #include "SFML/System/Vector2.hpp"
-#include "Transform.h"
+#include "oTransform.h"
 #include "ActorComponent.h"
 
 
-class Rigidbody : public ActorComponent
+class oRigidBody :public ActorComponent
 {
 public:
-	Rigidbody();
-	~Rigidbody();
+	oRigidBody();
+	~oRigidBody();
 	void AddForce(sf::Vector2<float> direction);
 	void Integrate(float dT);
 private:

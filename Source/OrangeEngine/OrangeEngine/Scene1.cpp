@@ -2,8 +2,9 @@
 #include <SFML/Graphics.hpp>
 #include "ScriptingSystem.h"
 #include "ShapeComponent.h"
-#include "Transform.h"
+#include "oTransform.h"
 #include "../../OrangeEngine.h"
+#include "oRigidBody.h"
 
 Scene1::Scene1()
 {
@@ -18,11 +19,18 @@ Scene1::~Scene1()
 void Scene1::buildScene()
 {
 	OrangeEngine* Orange = OrangeEngine::GetInstance();
+	
+
+	sf::Time t1 = sf::seconds(0.1f);
+	float milli = t1.asMilliseconds();
 
 	Actor* sun = new Actor();
 	sun->AddComponent(new ShapeComponent(10, 10, sf::Color::Red));
 	sun->position->Translate(100, 0);
 	sun->position->Scale(10, 10);
+	sun->rb->Integrate(milli);
+	sun->rb->AddForce(sf::Vector2f(111, 1));
+	
 
 	Actor* moon = new Actor();
 	moon->AddComponent(new ShapeComponent(10, 6, sf::Color::Blue));
@@ -46,3 +54,9 @@ void Scene1::buildScene()
 	delete(sun);
 
 }
+
+void Scene1::update(sf::Time elapsedTime)
+{
+	
+}
+

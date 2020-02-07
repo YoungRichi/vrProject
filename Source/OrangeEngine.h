@@ -8,6 +8,7 @@
 #include "OrangeEngine/OrangeEngine/SplashScreen.h"
 #include <vector>
 #include "OrangeEngine/OrangeEngine/Actor.h"
+#include <SFML/System/Time.hpp>
 
 using namespace std;
 
@@ -45,6 +46,7 @@ public:
 	void Print(string message);
 	void PrintToWindow(string message);
 	void AddActor(Actor* _actor);
+	void update(sf::Time elapsedTime);
 };
 #endif // __ORANGE_ENGINE_H__
 

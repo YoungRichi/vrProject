@@ -1,7 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "oTransform.h"
+#include "Rigidbody.h"
 
 using namespace sf;
+
+
 
 
 class GameObjectManager
@@ -16,16 +20,26 @@ public:
 
 	void GetTransform();
 
-	Transform getWorldTransform() const;
+	void SetMass(float m);
 
+	float GetMass();
+
+	sf::Transform getWorldTransform() const;
+
+
+	float mass = 1.0f;
+
+	sf::Vector2f GetPosition() const;
+	
 	void AddChild(GameObjectManager* s);
 
 	void Update(float msec);
 
 protected:
 	GameObjectManager* parent;
-	Transform worldTransform;
-	Transform transform;
+	sf::Transform worldTransform;
+	sf::Transform transform;
 	std::vector<GameObjectManager*> children;
+
 };
 

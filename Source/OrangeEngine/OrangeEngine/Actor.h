@@ -9,7 +9,8 @@ namespace sf
 {
 	class Transform;
 }
-class Transform;
+class oTransform;
+class oRigidBody;
 
 class Actor
 {
@@ -28,7 +29,8 @@ public:
 	void SetParent(Actor* p) { parent = p; }
 	void AddChild(Actor* s);
 	virtual void Update(float msec);
-	Transform* position;
+	oTransform* position;
+	oRigidBody* rb;
 
 protected:
 	Actor* parent;

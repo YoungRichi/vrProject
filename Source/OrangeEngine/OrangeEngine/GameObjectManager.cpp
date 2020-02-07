@@ -1,6 +1,7 @@
 #include "GameObjectManager.h"
 
-
+oTransform* oT;
+//Rigidbody* rb;
 
 GameObjectManager::GameObjectManager()
 {
@@ -13,7 +14,6 @@ GameObjectManager::~GameObjectManager()
 	{
 		delete children[i];
 	}
-	
 }
 
 void GameObjectManager::SetTransform(float x, float y )
@@ -25,6 +25,15 @@ void GameObjectManager::GetTransform()
 {
 	tc.getMatrix();
 }
+void GameObjectManager::SetMass(float m)
+{
+	m = mass;
+}
+
+float GameObjectManager::GetMass()
+{
+	return mass;
+}
 Transform GameObjectManager::getWorldTransform() const
 {
 	sf::Transform transform = sf::Transform::Identity;
@@ -33,6 +42,13 @@ Transform GameObjectManager::getWorldTransform() const
 	//	transform = node->GetTransform() * transform;
 
 	return worldTransform;
+}
+
+
+
+sf::Vector2f GameObjectManager::GetPosition() const
+{
+	return oT->GetLocation();
 }
 
 void GameObjectManager::AddChild(GameObjectManager* s)
@@ -55,4 +71,6 @@ void GameObjectManager::Update(float msec)
 	{
 		(*i)->Update(msec);
 	}
+
+	//rb->Integrate(sf::Time dT);
 }

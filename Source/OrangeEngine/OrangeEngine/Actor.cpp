@@ -1,14 +1,16 @@
 //#include "SFML/Graphics/Transform.hpp"
-#include "Transform.h"
+#include "oTransform.h"
 #include "Actor.h"
+#include "oRigidbody.h"
 #include <windows.h>
 
 Actor::Actor()
 {
 	CoCreateGuid(&id);
 	parent = NULL;
-	position = new Transform();
+	position = new oTransform();
 	worldTransform = new sf::Transform();
+	rb = new oRigidBody();
 	localTransform = &(position->transform);
 }
 
