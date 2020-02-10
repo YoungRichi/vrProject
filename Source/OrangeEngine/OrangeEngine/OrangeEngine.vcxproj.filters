@@ -54,9 +54,6 @@
     <ClCompile Include="Actor.cpp">
       <Filter>Components\Actor</Filter>
     </ClCompile>
-    <ClCompile Include="Transform.cpp">
-      <Filter>Components\Transform</Filter>
-    </ClCompile>
     <ClCompile Include="ScriptComponent.cpp">
       <Filter>Actors</Filter>
     </ClCompile>
@@ -75,17 +72,17 @@
     <ClCompile Include="GameObjectManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="oTransform.cpp">
       <Filter>Components\Transform</Filter>
     </ClCompile>
     <ClCompile Include="oRigidBody.cpp">
       <Filter>Components</Filter>
     </ClCompile>
-    <ClCompile Include="Rigidbody.cpp">
-      <Filter>Components</Filter>
+    <ClCompile Include="PhysicsEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ActorComponent.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -110,9 +107,6 @@
     <ClInclude Include="Actor.h">
       <Filter>Components\Actor</Filter>
     </ClInclude>
-    <ClInclude Include="Transform.h">
-      <Filter>Components\Transform</Filter>
-    </ClInclude>
     <ClInclude Include="ScriptComponent.h">
       <Filter>Actors</Filter>
     </ClInclude>
@@ -131,17 +125,14 @@
     <ClInclude Include="GameObjectManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="oTransform.h">
       <Filter>Components\Transform</Filter>
     </ClInclude>
     <ClInclude Include="oRigidBody.h">
       <Filter>Components</Filter>
     </ClInclude>
-    <ClInclude Include="Rigidbody.h">
-      <Filter>Components</Filter>
+    <ClInclude Include="PhysicsEngine.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

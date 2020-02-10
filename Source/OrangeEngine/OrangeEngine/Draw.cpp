@@ -1,8 +1,10 @@
 #include <SFML/Graphics.hpp>
+#include "oTransform.h"
 #include "Actor.h"
 #include "ActorComponent.h"
 #include "Draw.h"
 #include "ShapeComponent.h"
+
 
 Draw::Draw()
 {
@@ -76,8 +78,9 @@ void Draw::RenderActors(vector<Actor*>* actors) {
 		{
 			ShapeComponent* sc = (ShapeComponent*)(*it)->GetComponent("shape");
 			sf::CircleShape shape(sc->GetRadius(),sc->GetEdge());
+			
 			shape.setFillColor(sc->GetColor());
-			window->draw(shape, *(*it)->GetWorldTransform());
+			window->draw(shape, (*it)->GetWorldTransform()->getTransform());
 		}
 	}
 

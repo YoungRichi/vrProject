@@ -1,6 +1,7 @@
 #pragma once
 #ifndef __ORANGE_ENGINE_H__
 #define __ORANGE_ENGINE_H__
+#include <SFML/System/Time.hpp>
 #include <windows.h>
 #include <tchar.h>
 #include <string>
@@ -8,9 +9,10 @@
 #include "OrangeEngine/OrangeEngine/SplashScreen.h"
 #include <vector>
 #include "OrangeEngine/OrangeEngine/Actor.h"
-#include <SFML/System/Time.hpp>
 
 using namespace std;
+
+class PhysicsEngine;
 
 class OrangeEngine
 {
@@ -39,6 +41,8 @@ private:
 	static OrangeEngine* instance;
 	vector<Actor*> actors;
 
+	PhysicsEngine* physicsEngine;
+
 public:
 	static OrangeEngine* GetInstance();
 	bool InitInstance(HINSTANCE _hInstance, HINSTANCE _previousInstance, PSTR _cmdLine, INT _nCmdShow, string _szTitle);
@@ -47,6 +51,10 @@ public:
 	void PrintToWindow(string message);
 	void AddActor(Actor* _actor);
 	void update(sf::Time elapsedTime);
+	PhysicsEngine* GetPhysics() { return physicsEngine; }
+
+	void CreatePhysics();
+	void DestroyPhysics();
 };
 #endif // __ORANGE_ENGINE_H__
 

@@ -1,5 +1,7 @@
-#include "SplashScreen.h"
+#pragma once
+
 #include <SFML/Graphics.hpp>
+#include "SplashScreen.h"
 
 
 void SplashScreen::Splash()

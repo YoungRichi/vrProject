@@ -1,7 +1,8 @@
-#include "SFML/Graphics/Transform.hpp"
-#include "SFML/System/Vector2.hpp"
 #ifndef __TRANSFORM_COMPONENT_H__
 #define __TRANSFORM_COMPONENT_H__
+
+#include <SFML/Graphics/Transform.hpp>
+#include <SFML/System/Vector2.hpp>
 
 #include "ActorComponent.h"
 class Transform : public ActorComponent {

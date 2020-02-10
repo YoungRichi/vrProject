@@ -5,41 +5,45 @@
 
 using namespace sf;
 
-
+class Actor;
 
 
 class GameObjectManager
 {
-	sf::Transform tc;
+	//sf::Transform tc;
 	//sf::Time::asMilliseconds();
 public:
 	GameObjectManager();
 	~GameObjectManager();
 	
-	void SetTransform(float x, float y);
+	//void SetTransform(float x, float y);
 
-	void GetTransform();
+	//void GetTransform();
 
-	void SetMass(float m);
+	//void SetMass(float m);
 
-	float GetMass();
+	//float GetMass();
 
-	sf::Transform getWorldTransform() const;
+	//sf::Transform getWorldTransform() const;
 
 
-	float mass = 1.0f;
+	//float mass = 1.0f;
 
-	sf::Vector2f GetPosition() const;
+	//sf::Vector2f GetPosition() const;
 	
-	void AddChild(GameObjectManager* s);
+	//void AddChild(GameObjectManager* s);
+
+	Actor* GetActor(GUID id) const;
+	void AddActor(Actor* actor);
+	void RemoveActor(GUID id);
 
 	void Update(float msec);
 
 protected:
-	GameObjectManager* parent;
-	sf::Transform worldTransform;
-	sf::Transform transform;
-	std::vector<GameObjectManager*> children;
-
+	//GameObjectManager* parent;
+	//sf::Transform worldTransform;
+	//sf::Transform transform;
+	//std::vector<GameObjectManager*> children;
+	std::vector<Actor*> actors;
 };
 

@@ -1,4 +1,7 @@
-﻿#include <SFML/Graphics.hpp>
+﻿#pragma once
+
+#include <SFML/Graphics.hpp>
+#include <SFML/Window/Event.hpp>
 #include "OrangeEngine.h"
 #include <iostream>
 #include <windows.h>
@@ -9,7 +12,7 @@
 #include <string>
 #include "OrangeEngine/OrangeEngine/ScriptingSystem.h"
 #include <time.h>
-#include <SFML/Window/Event.hpp>
+#include "../PhysicsEngine.h"
 
 using namespace std;
 const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
@@ -23,6 +26,7 @@ OrangeEngine* OrangeEngine::GetInstance()
 	if (!instance)
 	{
 		instance = new OrangeEngine();
+		instance->CreatePhysics();
 	}
 	return instance;
 }
@@ -33,6 +37,7 @@ OrangeEngine::OrangeEngine()
 
 OrangeEngine::~OrangeEngine()
 {
+	DestroyPhysics();
 }
 
 void OrangeEngine::PrintToWindow(string message)
@@ -244,8 +249,6 @@ bool OrangeEngine::InitInstance(HINSTANCE _hInstance, HINSTANCE _previousInstanc
 	{
 		return false;
 	}
-
-
 }
 
 void OrangeEngine::Run()
@@ -308,6 +311,17 @@ void OrangeEngine::Run()
 void OrangeEngine::update(sf::Time elapsedTime)
 {
 	//scene1.update(elapsedTime);
+}
+
+void OrangeEngine::CreatePhysics()
+{
+	physicsEngine = new PhysicsEngine();
+}
+
+void OrangeEngine::DestroyPhysics()
+{
+	if (physicsEngine)
+		delete physicsEngine;
 }
 
 void OrangeEngine::AddActor(Actor* _actor)

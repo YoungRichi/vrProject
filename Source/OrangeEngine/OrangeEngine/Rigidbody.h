@@ -1,6 +1,6 @@
 #pragma once
-#include "SFML/Graphics/Transform.hpp"
-#include "SFML/System/Vector2.hpp"
+#include <SFML/Graphics/Transform.hpp>
+#include <SFML/System/Vector2.hpp>
 #include "Transform.h"
 #include "ActorComponent.h"
 

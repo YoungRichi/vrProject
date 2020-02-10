@@ -1,9 +1,12 @@
 #ifndef __BASE_ACTOR_H__
 #define __BASE_ACTOR_H__
+
+#include <SFML/Graphics.hpp>
+#include "ActorComponent.h"
 #include <string>
 #include <windows.h>
-#include "ActorComponent.h"
 #include <vector>
+
 using namespace std;
 namespace sf
 {
@@ -19,23 +22,29 @@ private:
 	vector<ActorComponent*> components;
 
 public:
-	Actor();
+	Actor(oTransform* trns, oRigidBody* rb = nullptr);
 	~Actor(void);
-	void AddComponent(ActorComponent* _component);
+	void AddComponent(ActorComponent* component);
 	ActorComponent* GetComponent(string componentName);
-	void SetTransform(sf::Transform matrix);
-	sf::Transform* GetLocalTransform() { return localTransform; }
-	sf::Transform* GetWorldTransform() { return worldTransform; }
+	//void SetTransform(sf::Transform matrix);
+	void SetTransform(oTransform* transform);
+	//sf::Transform* GetLocalTransform() { return localTransform; }
+	sf::Transformable* GetWorldTransform();
 	void SetParent(Actor* p) { parent = p; }
 	void AddChild(Actor* s);
 	virtual void Update(float msec);
-	oTransform* position;
+
+	oTransform* GetTransform() { return transform; }
+	oRigidBody* GetRigidbody() { return rb; }
+
+	GUID Id() const { return id; }
+protected:
+	oTransform* transform;
 	oRigidBody* rb;
 
-protected:
 	Actor* parent;
-	sf::Transform* worldTransform;
-	sf::Transform* localTransform;
+	//sf::Transform* worldTransform;
+	//sf::Transform* localTransform;
 	vector<Actor*> children;
 };
 

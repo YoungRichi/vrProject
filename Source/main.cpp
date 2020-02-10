@@ -1,3 +1,4 @@
+#define NOMINMAX
 
 #include <iostream>
 #include "windows.h"
@@ -13,16 +14,15 @@
 #include "../Actor.h"
 #include "../Scene1.h"
 
-
-Scene1 *ss;
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE previousInstance, PSTR cmdLine, INT nCmdShow)
 {
+	Scene1 ss;
 
 	//create an instance of engine 
 	// init engine
 	//orangeengine.createscene/loadscene (file name/scene name)
 	// orangeengine.run
-	ss->buildScene();
+	ss.buildScene();
 	return 0;
 
 }
