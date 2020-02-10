@@ -33,10 +33,10 @@ void Scene1::buildScene()
 	sun->GetTransform()->Translate(100, 0);
 	sun->GetTransform()->Scale(10, 10);
 	
-	if (sun->GetRigidbody()) {
+	/*if (sun->GetRigidbody()) {
 		sun->GetRigidbody()->Integrate(milli);
 		sun->GetRigidbody()->AddForce(sf::Vector2f(111, 1));
-	}
+	}*/
 	
 
 	Actor* moon = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
@@ -62,7 +62,7 @@ void Scene1::buildScene()
 
 }
 
-void Scene1::update(sf::Time elapsedTime)
+/*void Scene1::update(sf::Time elapsedTime)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
@@ -70,5 +70,5 @@ void Scene1::update(sf::Time elapsedTime)
 		//sun.move(1, 0);
 		exit(0);
 	}
-}
+}*/
 

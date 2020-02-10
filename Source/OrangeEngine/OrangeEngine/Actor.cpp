@@ -95,8 +95,8 @@ void Actor::Update(float msec)
 	}*/
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		// left key is pressed: move our character
-		//character.move(1, 0);
+		
+		
 		exit(0);
 	}
 }
