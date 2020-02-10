@@ -42,7 +42,7 @@ void Scene1::buildScene()
 	Actor* moon = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	moon->AddComponent(new ShapeComponent(10, 6, sf::Color::Blue));
 	moon->GetTransform()->Translate(0, 0);
-	moon->GetTransform()->Scale(0.3, 0.3);
+	moon->GetTransform()->Scale(1, 1);
 	sun->AddChild(moon);
 	//sun->position->Translate(50, 50);
 	sun->GetTransform()->Rotate(90);
