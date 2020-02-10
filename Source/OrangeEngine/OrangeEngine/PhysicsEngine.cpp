@@ -9,11 +9,15 @@ bool PhysicsEngine::IsGrounded(oRigidBody * rb)
 
 void PhysicsEngine::AddRigidBody(oRigidBody * rb)
 {
-	
+	rigidBodies.push_back(rb);
 }
 
 void PhysicsEngine::IntegrateBodies(float dT)
 {
+	for (auto i = rigidBodies.begin(); i != rigidBodies.end(); ++i)
+	{
+		//rigidBodies[i].
+	}
 }
 
 void PhysicsEngine::CheckCollisions()

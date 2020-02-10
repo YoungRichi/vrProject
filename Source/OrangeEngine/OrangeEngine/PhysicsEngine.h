@@ -19,7 +19,7 @@ class PhysicsEngine
 private: 
 	float groundedTol = 0.1f;
 	std::map<CollisionPair, CollisionInfo> collisions;
-	std::list<oRigidBody> rigidBodies = {};
+	std::list<oRigidBody*> rigidBodies = {};
 
 public:
 	bool IsGrounded(oRigidBody* rb);
