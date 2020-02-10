@@ -1,5 +1,5 @@
 #include "PhysicsEngine.h"
-
+#include "algorithm"
 
 
 bool PhysicsEngine::IsGrounded(oRigidBody * rb)
@@ -9,19 +9,28 @@ bool PhysicsEngine::IsGrounded(oRigidBody * rb)
 
 void PhysicsEngine::AddRigidBody(oRigidBody * rb)
 {
-	
+	rigidBodies.push_back(rb);
 }
 
 void PhysicsEngine::IntegrateBodies(float dT)
 {
+	for (int i = 0; i < rigidBodies.size(); i++)
+	{
+		rigidBodies[i]->Integrate(dT);
+	}
 }
 
 void PhysicsEngine::CheckCollisions()
 {
+	//for ()
 }
 
 void PhysicsEngine::ResolveCollisions()
 {
+	//for (int i = 0; i < pair; i++)
+	//{
+
+	//}
 }
 
 void PhysicsEngine::PositionalCorrection(CollisionPair c)

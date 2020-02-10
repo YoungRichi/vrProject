@@ -1,10 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <list>
+#include "oRigidBody.h"
+#include <vector>
 
-class oRigidBody;
-
-class PhysicsEngine
+class PhysicsEngine : 
 {
 	struct CollisionPair {
 		oRigidBody* rigidbodyA;
@@ -19,7 +19,11 @@ class PhysicsEngine
 private: 
 	float groundedTol = 0.1f;
 	std::map<CollisionPair, CollisionInfo> collisions;
-	std::list<oRigidBody> rigidBodies = {};
+
+	std::vector<oRigidBody*> rigidBodies;
+	//std::list<oRigidBody*> rigidBodies;
+	//std::list<oRigidBody*>::iterator ob = rigidBodies.begin();
+	
 
 public:
 	bool IsGrounded(oRigidBody* rb);
@@ -29,6 +33,7 @@ public:
 	void ResolveCollisions();
 	void PositionalCorrection(CollisionPair c);
 	void UpdatePhysics();
+
 
 	PhysicsEngine();
 	~PhysicsEngine();
