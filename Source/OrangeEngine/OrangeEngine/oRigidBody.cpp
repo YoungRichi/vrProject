@@ -6,9 +6,6 @@
 #include <cmath>
 
 
-//GameObjectManager* gm;
-
-
 oRigidBody::oRigidBody(PhysicsEngine* phEngine)
 	: gravity(0, -9.8f)
 	, maxVelocity(10.f, 10.f)

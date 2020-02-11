@@ -1,6 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <list>
+#include "oRigidBody.h"
+#include <vector>
+#include <cmath>
 
 class oRigidBody;
 
@@ -19,7 +22,7 @@ class PhysicsEngine
 private: 
 	float groundedTol = 0.1f;
 	std::map<CollisionPair, CollisionInfo> collisions;
-	std::list<oRigidBody*> rigidBodies = {};
+	std::vector<oRigidBody*> rigidBodies;
 
 public:
 	bool IsGrounded(oRigidBody* rb);

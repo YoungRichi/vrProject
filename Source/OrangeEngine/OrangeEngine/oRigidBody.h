@@ -5,6 +5,7 @@
 #include "oTransform.h"
 
 class PhysicsEngine;
+class oTransform;
 
 class oRigidBody : public ActorComponent
 {
@@ -27,6 +28,7 @@ public:
 	void SetMass(float value) { mass = value; }
 	AABB GetAABB() { return aabb; }
 	void SetAABB(AABB value) { aabb = value; }
+	oTransform* transform;
 
 private:
 	sf::Vector2<float> currentVelocity;
