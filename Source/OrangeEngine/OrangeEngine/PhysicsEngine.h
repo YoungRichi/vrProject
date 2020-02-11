@@ -4,7 +4,7 @@
 #include "oRigidBody.h"
 #include <vector>
 
-class PhysicsEngine : 
+class PhysicsEngine
 {
 	struct CollisionPair {
 		oRigidBody* rigidbodyA;

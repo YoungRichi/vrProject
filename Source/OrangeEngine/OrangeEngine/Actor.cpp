@@ -93,10 +93,31 @@ void Actor::Update(float msec)
 	{
 		(*i)->Update(msec);
 	}*/
+	//if (inputSystem.GetKey("d"))
+	//	this->GetTransform()->Translate(10, 0);
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
+	{
+		this->GetTransform()->Translate(10, 0);
+	}
+
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
 	{
-		
-		
-		exit(0);
+		this->GetTransform()->Translate(-10, 0);
+	}
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
+	{
+		this->GetTransform()->Translate(0, 10);
+	}
+
+
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		this->GetTransform()->Translate(0, -10);
+	}
+
+	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
+	{
+		//exit(0);
 	}
 }

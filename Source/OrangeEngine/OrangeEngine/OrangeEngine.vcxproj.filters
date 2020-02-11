@@ -34,6 +34,9 @@
     <Filter Include="Components\Shape">
       <UniqueIdentifier>{e3b31332-d94b-427c-a938-7406dc3cd0de}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\Input">
+      <UniqueIdentifier>{83efc4fb-8860-4f18-8296-230454388839}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp">
@@ -84,6 +87,9 @@
     <ClCompile Include="ActorComponent.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="oInputManager.cpp">
+      <Filter>Components\Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Actors\SpecialAbilityComponent.h">
@@ -133,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="PhysicsEngine.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="oInputManager.h">
+      <Filter>Components\Input</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
