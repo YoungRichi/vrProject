@@ -1,5 +1,5 @@
 #include "PhysicsEngine.h"
-
+#include "algorithm"
 
 
 bool PhysicsEngine::IsGrounded(oRigidBody * rb)
@@ -97,6 +97,12 @@ void PhysicsEngine::ResolveCollisions()
 	{
 		CollisionPair k = iter->first;
 	}*/
+
+	//for (int i = 0; i < pair; i++)
+	//{
+
+	//}
+
 }
 
 void PhysicsEngine::PositionalCorrection(CollisionPair c)

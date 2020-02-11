@@ -30,8 +30,11 @@ void Scene1::buildScene()
 	//Actor* sun = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	Actor* sun = new Actor(&ot, new oRigidBody(Orange->GetPhysics()));
 	sun->AddComponent(new ShapeComponent(10, 10, sf::Color::Red));
-	sun->GetTransform()->Translate(100, 0);
+	//sun->AddComponent(new ScriptComponent("movement.lua"));
+	sun->GetTransform()->Translate(300, 0);
 	sun->GetTransform()->Scale(10, 10);
+	sun->Update(milli);
+	
 	
 	/*if (sun->GetRigidbody()) {
 		sun->GetRigidbody()->Integrate(milli);

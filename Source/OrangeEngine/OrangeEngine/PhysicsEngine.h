@@ -24,6 +24,10 @@ private:
 	std::map<CollisionPair, CollisionInfo> collisions;
 	std::vector<oRigidBody*> rigidBodies;
 
+	//std::list<oRigidBody*> rigidBodies;
+	//std::list<oRigidBody*>::iterator ob = rigidBodies.begin();
+
+
 public:
 	bool IsGrounded(oRigidBody* rb);
 	void AddRigidBody(oRigidBody* rb);
@@ -32,6 +36,7 @@ public:
 	void ResolveCollisions();
 	void PositionalCorrection(CollisionPair c);
 	void UpdatePhysics();
+
 
 	PhysicsEngine();
 	~PhysicsEngine();
