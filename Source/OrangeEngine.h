@@ -45,7 +45,7 @@ private:
 
 public:
 	static OrangeEngine* GetInstance();
-	bool InitInstance(HINSTANCE _hInstance, HINSTANCE _previousInstance, PSTR _cmdLine, INT _nCmdShow, string _szTitle);
+	bool InitInstance();
 	void Run();
 	void Print(string message);
 	void PrintToWindow(string message);

@@ -229,13 +229,8 @@ void OrangeEngine::ReadCPUSpeed()
 	Print(cpuType);
 }
 
-bool OrangeEngine::InitInstance(HINSTANCE _hInstance, HINSTANCE _previousInstance, PSTR _cmdLine, INT _nCmdShow, string _szTitle)
+bool OrangeEngine::InitInstance()
 {
-	hInstance = _hInstance;
-	previousInstance = _previousInstance;
-	cmdLine = _cmdLine;
-	nCmdShow = _nCmdShow;
-	szTitle = _szTitle;
 
 	if (IsOnlyInstance(szTitle.c_str()))
 	{

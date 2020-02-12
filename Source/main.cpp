@@ -18,13 +18,18 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE previousInstance, PSTR cmdLi
 {
 	Scene1 ss;
 
-	OrangeEngine* engine;
+	OrangeEngine* Orange = OrangeEngine::GetInstance();
 
 	//create an instance of engine 
 	// init engine
 	//orangeengine.createscene/loadscene (file name/scene name)
 	// orangeengine.run
-	ss.buildScene();
+
+	if (Orange->InitInstance())
+	{
+		ss.buildScene(Orange);
+	}
+
 	return 0;
 
 }
