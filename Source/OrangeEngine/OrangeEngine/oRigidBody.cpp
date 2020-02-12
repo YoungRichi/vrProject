@@ -1,3 +1,4 @@
+#define NOMINMAX
 #include "oRigidbody.h"
 #include "../../OrangeEngine.h"
 #include "../GameObjectManager.h"
@@ -7,7 +8,7 @@
 
 
 oRigidBody::oRigidBody(PhysicsEngine* phEngine)
-	: gravity(0, -9.8f)
+	: gravity(0, 9.8f)
 	, maxVelocity(10.f, 10.f)
 	, physicsEngine(phEngine)
 	, aabb(aabb)

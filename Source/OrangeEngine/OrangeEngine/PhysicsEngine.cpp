@@ -1,6 +1,11 @@
+#define NOMINMAX
 #include "PhysicsEngine.h"
-#include "algorithm"
+#include "Actor.h"
 
+float DotProduct(sf::Vector2f f, sf::Vector2f s)
+{
+	return f.x * s.x + f.y * s.y;
+}
 
 bool PhysicsEngine::IsGrounded(oRigidBody * rb)
 {
@@ -34,7 +39,7 @@ void PhysicsEngine::CheckCollisions()
 {
 	for (int i = 0; i < rigidBodies.size() - 1; i++) 
 	{
-		for (int j = 0; rigidBodies.at[i] < j < rigidBodies.size() - rigidBodies.at[i]; j++)
+		for (int j = i; j < rigidBodies.size(); j++)
 		{
 			if (i != j)
 			{
@@ -43,10 +48,10 @@ void PhysicsEngine::CheckCollisions()
 				pair.rigidbodyA = rigidBodies[i];
 				pair.rigidbodyB = rigidBodies[j];
 
-				sf::Vector2f distance = rigidBodies[j]->transform->transform->getPosition() - rigidBodies[i]->transform->transform->getPosition();
+				sf::Vector2f distance = rigidBodies[j]->GetActor()->GetTransform()->transform->getPosition() - rigidBodies[i]->GetActor()->GetTransform()->transform->getPosition();
 
-				sf::Vector2f halfSizeA = (rigidBodies[i]->GetAABB().tRight - rigidBodies[i]->GetAABB().bLeft) / 2.f;
-				sf::Vector2f halfSizeB = (rigidBodies[j]->GetAABB().tRight - rigidBodies[j]->GetAABB().bLeft) / 2.f;
+				sf::Vector2f halfSizeA = (rigidBodies[i]->GetAABB().tRight + rigidBodies[i]->GetAABB().bLeft) / 2.f;
+				sf::Vector2f halfSizeB = (rigidBodies[j]->GetAABB().tRight + rigidBodies[j]->GetAABB().bLeft) / 2.f;
 
 				sf::Vector2f gap = sf::Vector2f(abs(distance.x), abs(distance.y)) - (halfSizeA + halfSizeB);
 				
@@ -67,6 +72,7 @@ void PhysicsEngine::CheckCollisions()
 						{
 							info.collisionNormal = sf::Vector2f(-1.f, 0.f);
 						}
+						info.penetration = gap.x;
 					}
 					else
 					{
@@ -80,7 +86,7 @@ void PhysicsEngine::CheckCollisions()
 						}
 						info.penetration = gap.y;
 					}
-					collisions.insert(std::pair<CollisionPair, CollisionInfo>(pair, info));
+					collisions.insert(std::make_pair(pair, info));
 				}
 				else if (collisions.find(pair) != collisions.end())
 				{
@@ -93,24 +99,75 @@ void PhysicsEngine::CheckCollisions()
 
 void PhysicsEngine::ResolveCollisions()
 {
-	/*for (std::map<, auto>::iterator iter = collisions.begin(); iter != collisions.end(); ++iter)
+	for (auto p : collisions)
 	{
-		CollisionPair k = iter->first;
-	}*/
+		auto pair = p.first;
+		float minBounce = min(pair.rigidbodyA->GetBounciness(), pair.rigidbodyB->GetBounciness());
+		float velAlongNormal = DotProduct(pair.rigidbodyA->GetCurVelocity() - pair.rigidbodyA->GetCurVelocity(), collisions[pair].collisionNormal);
+		if (velAlongNormal > 0) continue;
 
-	//for (int i = 0; i < pair; i++)
-	//{
+		float j = -(1 + minBounce) * velAlongNormal;
+		float invMassA, invMassB;
+		if (pair.rigidbodyA->GetMass() == 0)
+			invMassA = 0;
+		else 
+			invMassA = 1.f / pair.rigidbodyA->GetMass();
 
-	//}
+		if (pair.rigidbodyB->GetMass() == 0)
+			invMassB = 0;
+		else
+			invMassB = 1.f / pair.rigidbodyB->GetMass();
+
+		j /= invMassA + invMassB;
+
+		sf::Vector2f impulse = j * collisions[pair].collisionNormal;
+	
+		// ... update velocities
+		pair.rigidbodyA->SetCurVelocity(pair.rigidbodyA->GetCurVelocity() - impulse * invMassA);
+		pair.rigidbodyB->SetCurVelocity(pair.rigidbodyA->GetCurVelocity() + impulse * invMassB);
+
+		if (abs(collisions[pair].penetration) > 0.01f) {
+			PositionalCorrection(pair);
+		}
+	}
+	
 
 }
 
 void PhysicsEngine::PositionalCorrection(CollisionPair c)
 {
+	const float percent = 0.2f;
+
+	float invMassA, invMassB;
+	if (c.rigidbodyA->GetMass() == 0)
+		invMassA = 0;
+	else
+		invMassA = 1 / c.rigidbodyA->GetMass();
+
+	if (c.rigidbodyB->GetMass() == 0)
+		invMassB = 0;
+	else
+		invMassB = 1 / c.rigidbodyB->GetMass();
+
+	sf::Vector2f correction = ((collisions[c].penetration / (invMassA + invMassB)) * percent) * -collisions[c].collisionNormal;
+	auto transformA = c.rigidbodyA->GetActor()->GetTransform()->transform;
+	auto transformB = c.rigidbodyB->GetActor()->GetTransform()->transform;
+
+	sf::Vector2f temp = transformA->getPosition();
+	temp -= invMassA * correction;
+	transformA->setPosition(temp);
+
+	temp = transformB->getPosition();
+	temp += invMassB * correction;
+	transformB->setPosition(temp);
 }
 
-void PhysicsEngine::UpdatePhysics()
+void PhysicsEngine::UpdatePhysics(float sec)
 {
+	IntegrateBodies(sec);
+
+	CheckCollisions();
+	ResolveCollisions();
 }
 
 PhysicsEngine::PhysicsEngine()
@@ -120,4 +177,12 @@ PhysicsEngine::PhysicsEngine()
 
 PhysicsEngine::~PhysicsEngine()
 {
+}
+
+bool PhysicsEngine::CmpCollisionPair::operator()(CollisionPair const & lhs, CollisionPair const & rhs) const
+{
+	return 
+		lhs.rigidbodyA < rhs.rigidbodyA ||
+		lhs.rigidbodyA == rhs.rigidbodyA &&
+		lhs.rigidbodyB < rhs.rigidbodyB;
 }

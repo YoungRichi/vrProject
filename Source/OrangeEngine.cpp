@@ -1,5 +1,5 @@
 ﻿#pragma once
-
+#define NOMINMAX
 #include <SFML/Graphics.hpp>
 #include <SFML/Window/Event.hpp>
 #include "OrangeEngine.h"
@@ -280,9 +280,9 @@ void OrangeEngine::Run()
 				update(TimePerFrame);
 				//processEvents(); Handle Input Here
 				for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
-					{
-						(*it)->Update(deltaTime);
-					}
+				{
+					(*it)->Update(TimePerFrame.asMilliseconds());
+				}
 				
 				d.RenderActors(&actors);
 			}
@@ -310,7 +310,7 @@ void OrangeEngine::Run()
 
 void OrangeEngine::update(sf::Time elapsedTime)
 {
-	//scene1.update(elapsedTime);
+	physicsEngine->UpdatePhysics(elapsedTime.asSeconds());
 }
 
 void OrangeEngine::CreatePhysics()
@@ -327,4 +327,6 @@ void OrangeEngine::DestroyPhysics()
 void OrangeEngine::AddActor(Actor* _actor)
 {
 	actors.push_back(_actor);
+	if (_actor->GetRigidbody())
+		physicsEngine->AddRigidBody(_actor->GetRigidbody());
 }

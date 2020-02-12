@@ -1,9 +1,11 @@
+#define NOMINMAX
 #include <SFML/Graphics.hpp>
 #include "oTransform.h"
 #include "Actor.h"
 #include "ActorComponent.h"
 #include "Draw.h"
 #include "ShapeComponent.h"
+#include "RectangleComponent.h"
 
 
 Draw::Draw()
@@ -77,9 +79,22 @@ void Draw::RenderActors(vector<Actor*>* actors) {
 		if ((*it)->GetComponent("shape"))
 		{
 			ShapeComponent* sc = (ShapeComponent*)(*it)->GetComponent("shape");
-			sf::CircleShape shape(sc->GetRadius(),sc->GetEdge());
-			
-			shape.setFillColor(sc->GetColor());
+			if (sc)
+			{
+				sf::CircleShape shape(sc->GetRadius(), sc->GetEdge());
+
+				shape.setFillColor(sc->GetColor());
+				window->draw(shape, (*it)->GetWorldTransform()->getTransform());
+			}			
+		}
+		else
+		{
+			RectangleComponent* r = (RectangleComponent*)(*it)->GetComponent("rect");
+
+			sf::RectangleShape shape;
+			shape.setSize(sf::Vector2f(r->GetWidth(), r->GetHeight()));
+
+			shape.setFillColor(r->GetColor());
 			window->draw(shape, (*it)->GetWorldTransform()->getTransform());
 		}
 	}
