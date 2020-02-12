@@ -93,15 +93,6 @@
     <ClCompile Include="oInputManager.cpp">
       <Filter>Components\Input</Filter>
     </ClCompile>
-    <ClCompile Include="_string.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="ScriptingSystem.cpp">
-      <Filter>Scripts</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaStateManager.cpp">
-      <Filter>Scripts</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Actors\SpecialAbilityComponent.h">
@@ -151,15 +142,6 @@
     </ClInclude>
     <ClInclude Include="oInputManager.h">
       <Filter>Components\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="_string.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="ScriptingSystem.h">
-      <Filter>Scripts</Filter>
-    </ClInclude>
-    <ClInclude Include="LuaStateManager.h">
-      <Filter>Scripts</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

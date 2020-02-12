@@ -1,4 +1,5 @@
 //#include "SFML/Graphics/Transform.hpp"
+#define NOMINMAX
 #include <SFML/Graphics.hpp>
 #include "oTransform.h"
 #include "Actor.h"
@@ -9,11 +10,11 @@ Actor::Actor(oTransform* trns, oRigidBody* rb)
 	: transform(trns)
 	, rb(rb)
 {
-	transform->SetActor(this);
-	this->rb->SetActor(this);
-
 	CoCreateGuid(&id);
 	parent = NULL;
+
+	transform->SetActor(this);
+	this->rb->SetActor(this);
 	//position = new oTransform();
 	//worldTransform = new sf::Transform();
 	//rb = new oRigidBody();

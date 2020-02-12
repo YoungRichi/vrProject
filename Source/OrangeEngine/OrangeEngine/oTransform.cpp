@@ -1,6 +1,7 @@
 #include "oTransform.h"
 #include"Actor.h"
 #include"ShapeComponent.h"
+#include "RectangleComponent.h"
 
 oTransform::oTransform()
 {
@@ -89,6 +90,13 @@ sf::FloatRect oTransform::GetGlobalBounds()
 	{
 		ShapeComponent* sc = (ShapeComponent*)GetActor()->GetComponent("shape");
 		sf::CircleShape shape(sc->GetRadius(), sc->GetEdge());
+		return shape.getGlobalBounds();
+	}
+	else if (GetActor()->GetComponent("rect"))
+	{
+		RectangleComponent* r = (RectangleComponent*)GetActor()->GetComponent("rect");
+		sf::RectangleShape shape;
+		shape.setSize(sf::Vector2f(r->GetWidth(), r->GetHeight()));
 		return shape.getGlobalBounds();
 	}
 	return sf::FloatRect();

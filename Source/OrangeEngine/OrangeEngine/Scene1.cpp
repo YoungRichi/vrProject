@@ -1,7 +1,9 @@
+#define NOMINMAX
 #include <SFML/Graphics.hpp>
 #include "Scene1.h"
 #include "ScriptingSystem.h"
 #include "ShapeComponent.h"
+#include "RectangleComponent.h"
 #include "oTransform.h"
 
 #include "oRigidBody.h"
@@ -24,17 +26,13 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	sf::Time t1 = sf::seconds(0.1f);
 	float milli = t1.asMilliseconds();
 	
-	sf::Transformable t;
-	oTransform ot;
-	ot.SetTransform(&t);
-
 	//Actor* sun = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
-	Actor* sun = new Actor(&ot, new oRigidBody(Orange->GetPhysics()));
-	sun->AddComponent(new ShapeComponent(10, 10, sf::Color::Red));
-	//sun->AddComponent(new ScriptComponent("movement.lua"));
-	sun->GetTransform()->Translate(300, 0);
-	sun->GetTransform()->Scale(10, 10);
-	sun->Update(milli);
+	////Actor* sun = new Actor(&ot, new oRigidBody(Orange->GetPhysics()));
+	//sun->AddComponent(new ShapeComponent(30, 4, sf::Color::Red));
+	////sun->AddComponent(new ScriptComponent("movement.lua"));
+	//sun->GetTransform()->Translate(300, 0);
+	////sun->GetTransform()->Scale(10, 10);
+	//sun->Update(milli);
 	
 	
 	/*if (sun->GetRigidbody()) {
@@ -43,27 +41,47 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	}*/
 	
 
-	Actor* moon = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
+
+	//Actor* moon = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
+	//moon->AddComponent(new ShapeComponent(50, 4, sf::Color::Blue));
+	//moon->GetTransform()->Translate(0, 0);
+	////moon->GetTransform()->Scale(1, 1);
+	//sun->AddChild(moon);
+	////sun->position->Translate(50, 50);
+	//sun->GetTransform()->Rotate(90);
+
+	/*Actor* moon = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	moon->AddComponent(new ShapeComponent(10, 6, sf::Color::Blue));
 	//moon->AddComponent(new ScriptComponent("Assets/Scripts/ExampleScript.lua"));
 	moon->GetTransform()->Translate(0, 0);
 	moon->GetTransform()->Scale(1, 1);
 	sun->AddChild(moon);
 	//sun->position->Translate(50, 50);
-	sun->GetTransform()->Rotate(90);
+	sun->GetTransform()->Rotate(90);*/
 
 	Actor* star = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
-	star->AddComponent(new ShapeComponent(10, 5, sf::Color::Yellow));
-	star->GetTransform()->Translate(-0, -0);
-	star->GetTransform()->Scale(0.5, 0.5);
-	moon->AddChild(star);
+	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow));
+	star->GetTransform()->Translate(100, 0);
+	//star->GetTransform()->Scale(0.5, 0.5);
+	//moon->AddChild(star);
 
-	Orange->AddActor(sun);
-	Orange->AddActor(moon);
+	Actor* platform = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
+	//platform->AddComponent(new ShapeComponent(300, 4, sf::Color::White));
+	platform->AddComponent(new RectangleComponent(300, 40, sf::Color::White));
+	platform->GetTransform()->Translate(0, 300);
+	//platform->GetTransform()->Scale(50, 4);
+	platform->SetObeysGravity(false);
+	//star->AddChild(platform);
+
+	//Orange->AddActor(sun);
+	//Orange->AddActor(moon);
 	Orange->AddActor(star);
+	Orange->AddActor(platform);
 
 	Orange->Run();
-	delete(sun);
+	//delete(sun);
+
+	//delete(sun);
 }
 
 /*void Scene1::update(sf::Time elapsedTime)

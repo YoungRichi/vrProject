@@ -1,8 +1,10 @@
 #ifndef __BASE_ACTOR_H__
 #define __BASE_ACTOR_H__
+#define NOMINMAX
 
 #include <SFML/Graphics.hpp>
 #include "ActorComponent.h"
+#include "oRigidBody.h"
 #include <string>
 #include <windows.h>
 #include <vector>
@@ -33,6 +35,7 @@ public:
 	void SetParent(Actor* p) { parent = p; }
 	void AddChild(Actor* s);
 	virtual void Update(float msec);
+	void SetObeysGravity(bool value) { rb->SetObeysGravity(value); }
 
 	oTransform* GetTransform() { return transform; }
 	oRigidBody* GetRigidbody() { return rb; }

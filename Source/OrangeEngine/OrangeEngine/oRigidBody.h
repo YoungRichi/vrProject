@@ -1,4 +1,5 @@
 #pragma once
+#define NOMINMAX
 #include <SFML/Graphics/Transform.hpp>
 #include <SFML/System/Vector2.hpp>
 #include "ActorComponent.h"
@@ -24,11 +25,14 @@ public:
 	bool IsGrounded();
 	float GetMass() const { return mass; }
 	void CalcAABB();
-
+	float GetBounciness() const { return bounciness; }
+	sf::Vector2f GetCurVelocity() const { return currentVelocity; }
+	void SetBounciness(float value) { bounciness = value; }
 	void SetMass(float value) { mass = value; }
+	void SetCurVelocity(sf::Vector2f value) { currentVelocity = value; }
+	void SetObeysGravity(bool value) { obeysGravity = value; }
 	AABB GetAABB() { return aabb; }
 	void SetAABB(AABB value) { aabb = value; }
-	oTransform* transform;
 
 private:
 	sf::Vector2<float> currentVelocity;

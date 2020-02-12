@@ -7,11 +7,18 @@
 
 class oRigidBody;
 
+float DotProduct(sf::Vector2f, sf::Vector2f);
+
 class PhysicsEngine
 {
 	struct CollisionPair {
 		oRigidBody* rigidbodyA;
 		oRigidBody* rigidbodyB;
+	};
+	
+	struct CmpCollisionPair
+	{
+		bool operator()(CollisionPair const& lhs, CollisionPair const& rhs) const;
 	};
 
 	struct CollisionInfo {
@@ -21,7 +28,7 @@ class PhysicsEngine
 
 private: 
 	float groundedTol = 0.1f;
-	std::map<CollisionPair, CollisionInfo> collisions;
+	std::map<CollisionPair, CollisionInfo, CmpCollisionPair> collisions;
 	std::vector<oRigidBody*> rigidBodies;
 
 	//std::list<oRigidBody*> rigidBodies;
@@ -35,7 +42,7 @@ public:
 	void CheckCollisions();
 	void ResolveCollisions();
 	void PositionalCorrection(CollisionPair c);
-	void UpdatePhysics();
+	void UpdatePhysics(float sec);
 
 
 	PhysicsEngine();
