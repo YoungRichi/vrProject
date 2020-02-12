@@ -81,7 +81,7 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	Orange->Run();
 	//delete(sun);
 
-	delete(sun);
+	//delete(sun);
 }
 
 /*void Scene1::update(sf::Time elapsedTime)
