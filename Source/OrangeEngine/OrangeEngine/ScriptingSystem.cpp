@@ -24,7 +24,7 @@ void ScriptingSystem::Run()
 		{
 			ScriptComponent* sc2 = (ScriptComponent*)ac;
 			pLuaState->DoFile(sc2->GetPath().c_str());
-			LuaObject table = pLuaState->GetGlobals().GetByName("birthdayList");
+			LuaObject table = pLuaState->GetGlobals().GetByName("ScriptComponent");
 			for (LuaTableIterator it(table); it; it.Next())
 			{
 				LuaObject key = it.GetKey();

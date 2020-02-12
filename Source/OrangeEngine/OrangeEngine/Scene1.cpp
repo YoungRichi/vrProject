@@ -45,7 +45,7 @@ void Scene1::buildScene(OrangeEngine* Orange)
 
 	Actor* moon = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	moon->AddComponent(new ShapeComponent(10, 6, sf::Color::Blue));
-	moon->AddComponent(new ScriptComponent("Assets/Scripts/ExampleScript.lua"));
+	//moon->AddComponent(new ScriptComponent("Assets/Scripts/ExampleScript.lua"));
 	moon->GetTransform()->Translate(0, 0);
 	moon->GetTransform()->Scale(1, 1);
 	sun->AddChild(moon);

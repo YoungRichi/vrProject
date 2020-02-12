@@ -37,6 +37,12 @@
     <Filter Include="Components\Input">
       <UniqueIdentifier>{83efc4fb-8860-4f18-8296-230454388839}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Utility">
+      <UniqueIdentifier>{8c19fa96-39cc-43b8-8ea7-9cade01b5e4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{3d14aab4-bca2-409d-905c-b497f6367311}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp">
@@ -66,9 +72,6 @@
     <ClCompile Include="ShapeComponent.cpp">
       <Filter>Components\Shape</Filter>
     </ClCompile>
-    <ClCompile Include="ScriptingSystem.cpp">
-      <Filter>Actors</Filter>
-    </ClCompile>
     <ClCompile Include="Scene1.cpp">
       <Filter>Draw</Filter>
     </ClCompile>
@@ -89,6 +92,15 @@
     </ClCompile>
     <ClCompile Include="oInputManager.cpp">
       <Filter>Components\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="_string.cpp">
+      <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptingSystem.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="LuaStateManager.cpp">
+      <Filter>Scripts</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -122,9 +134,6 @@
     <ClInclude Include="ShapeComponent.h">
       <Filter>Components\Shape</Filter>
     </ClInclude>
-    <ClInclude Include="ScriptingSystem.h">
-      <Filter>Actors</Filter>
-    </ClInclude>
     <ClInclude Include="Scene1.h">
       <Filter>Draw</Filter>
     </ClInclude>
@@ -142,6 +151,15 @@
     </ClInclude>
     <ClInclude Include="oInputManager.h">
       <Filter>Components\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="_string.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptingSystem.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="LuaStateManager.h">
+      <Filter>Scripts</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
