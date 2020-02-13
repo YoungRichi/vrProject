@@ -5,7 +5,7 @@
 #include <windows.h>
 #include <tchar.h>
 #include <string>
-#include "../Draw.h"
+#include "../../Draw.h"
 #include "OrangeEngine/OrangeEngine/SplashScreen.h"
 #include <vector>
 #include "OrangeEngine/OrangeEngine/Actor.h"

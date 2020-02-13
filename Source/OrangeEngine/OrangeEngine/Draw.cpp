@@ -105,10 +105,9 @@ void Draw::RenderActors(vector<Actor*>* actors) {
 			if (a)
 			{
 				sf::SoundBuffer buffers;
-				sf::Sound sounds;
-				buffers.loadFromFile(a->getString());		
-				sounds.setBuffer(buffers);
-				sounds.play();
+				buffers.loadFromFile("audio/file_example_WAV_1MG.wav");
+				sound->setBuffer(buffers);
+				sound->play();
 				
 			}
 			

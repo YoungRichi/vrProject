@@ -10,6 +10,7 @@ using namespace std;
 
 namespace sf {
 	class RenderWindow;
+	class Sound;
 }
 
 class Actor;
@@ -30,5 +31,6 @@ public:
 	void RenderSplashScreen();
 	void RenderActors(vector<Actor*>* actors);
 	sf::RenderWindow* window;
+	sf::Sound* sound;
 };
 #endif
