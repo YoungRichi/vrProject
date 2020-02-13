@@ -9,10 +9,12 @@
 #include "OrangeEngine/OrangeEngine/SplashScreen.h"
 #include <vector>
 #include "OrangeEngine/OrangeEngine/Actor.h"
+#include "OrangeEngine/OrangeEngine/oInputManager.h"
 
 using namespace std;
 
 class PhysicsEngine;
+
 
 class OrangeEngine
 {
@@ -42,6 +44,7 @@ private:
 	vector<Actor*> actors;
 
 	PhysicsEngine* physicsEngine;
+	oInputManager* inputManager;
 
 public:
 	static OrangeEngine* GetInstance();
@@ -51,10 +54,13 @@ public:
 	void PrintToWindow(string message);
 	void AddActor(Actor* _actor);
 	void update(sf::Time elapsedTime);
-	PhysicsEngine* GetPhysics() { return physicsEngine; }
 
+	PhysicsEngine* GetPhysics() { return physicsEngine; }
 	void CreatePhysics();
 	void DestroyPhysics();
+
+	void CreateInputManager();
+
 };
 #endif // __ORANGE_ENGINE_H__
 

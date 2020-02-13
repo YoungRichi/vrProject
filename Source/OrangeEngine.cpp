@@ -306,11 +306,17 @@ void OrangeEngine::Run()
 void OrangeEngine::update(sf::Time elapsedTime)
 {
 	physicsEngine->UpdatePhysics(elapsedTime.asSeconds());
+	inputManager->UpdateKey(elapsedTime.asSeconds());
 }
 
 void OrangeEngine::CreatePhysics()
 {
 	physicsEngine = new PhysicsEngine();
+}
+
+void OrangeEngine::CreateInputManager()
+{
+	inputManager = new oInputManager();
 }
 
 void OrangeEngine::DestroyPhysics()

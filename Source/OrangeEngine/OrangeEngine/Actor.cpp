@@ -5,6 +5,7 @@
 #include "Actor.h"
 #include "oRigidbody.h"
 #include <windows.h>
+#include "oInputManager.h"
 
 Actor::Actor(oTransform* trns, oRigidBody* rb)
 	: transform(trns)

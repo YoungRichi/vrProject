@@ -9,6 +9,7 @@
 #include <windows.h>
 #include <vector>
 
+
 using namespace std;
 namespace sf
 {
@@ -16,6 +17,7 @@ namespace sf
 }
 class oTransform;
 class oRigidBody;
+class oInputManager;
 
 class Actor
 {
@@ -36,14 +38,19 @@ public:
 	void AddChild(Actor* s);
 	virtual void Update(float msec);
 	void SetObeysGravity(bool value) { rb->SetObeysGravity(value); }
+	void SetMass(float value) { rb->SetMass(value); }
+
+
 
 	oTransform* GetTransform() { return transform; }
 	oRigidBody* GetRigidbody() { return rb; }
+	oInputManager* GetInput() { return input; }
 
 	GUID Id() const { return id; }
 protected:
 	oTransform* transform;
 	oRigidBody* rb;
+	oInputManager* input;
 
 	Actor* parent;
 	//sf::Transform* worldTransform;

@@ -62,6 +62,8 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	Actor* star = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow));
 	star->GetTransform()->Translate(100, 0);
+	star->SetMass(0.1f);
+	//star->GetInput()->GetKeyDown('D') ;
 	//star->GetTransform()->Scale(0.5, 0.5);
 	//moon->AddChild(star);
 
@@ -69,6 +71,7 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	//platform->AddComponent(new ShapeComponent(300, 4, sf::Color::White));
 	platform->AddComponent(new RectangleComponent(300, 40, sf::Color::White));
 	platform->GetTransform()->Translate(0, 300);
+	platform->SetMass(1000.0f);
 	//platform->GetTransform()->Scale(50, 4);
 	platform->SetObeysGravity(false);
 	//star->AddChild(platform);
