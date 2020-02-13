@@ -7,20 +7,40 @@ float DotProduct(sf::Vector2f f, sf::Vector2f s)
 	return f.x * s.x + f.y * s.y;
 }
 
-bool PhysicsEngine::IsGrounded(oRigidBody * rb)
+//bool PhysicsEngine::IsGrounded(oRigidBody * rb)
+//{
+//	for (int i = 0; i < rigidBodies.size(); i++)
+//	{
+//		if (rigidBodies[i] != rb)
+//		{
+//			if (rb->GetAABB().bLeft.x < rb->GetAABB().tRight.x
+//				&& rb->GetAABB().tRight.x > rb->GetAABB().bLeft.x
+//				&& abs(rb->GetAABB().bLeft.y - rigidBodies[i]->GetAABB().tRight.y) <= groundedTol)
+//					return true;
+//		}
+//	}
+//	return false;
+//}
+
+bool PhysicsEngine::IsGrounded(oRigidBody* rb)
 {
 	for (int i = 0; i < rigidBodies.size(); i++)
 	{
 		if (rigidBodies[i] != rb)
 		{
-			if (rb->GetAABB().tRight.x < rb->GetAABB().tRight.x
-				&& rb->GetAABB().tRight.x > rb->GetAABB().bLeft.x
+			if (rb->GetAABB().bLeft.x < rigidBodies[i]->GetAABB().tRight.x
+				&& rb->GetAABB().tRight.x > rigidBodies[i]->GetAABB().bLeft.x
 				&& abs(rb->GetAABB().bLeft.y - rigidBodies[i]->GetAABB().tRight.y) <= groundedTol)
-				return true;
+			{
+				if (abs(rb->GetCurVelocity().y) < groundedTol)
+					return true;
+			}
 		}
 	}
 	return false;
 }
+
+
 
 void PhysicsEngine::AddRigidBody(oRigidBody * rb)
 {
@@ -37,7 +57,6 @@ void PhysicsEngine::IntegrateBodies(float dT)
 
 void PhysicsEngine::CheckCollisions()
 {
-
 	for (int i = 0; i < rigidBodies.size() - 1; i++) 
 	{
 		for (int j = i; j < rigidBodies.size(); j++)
@@ -50,9 +69,9 @@ void PhysicsEngine::CheckCollisions()
 				pair.rigidbodyB = rigidBodies[j];
 
 				sf::Vector2f distance = rigidBodies[j]->GetActor()->GetTransform()->transform->getPosition() - rigidBodies[i]->GetActor()->GetTransform()->transform->getPosition();
-
-				sf::Vector2f halfSizeA = (rigidBodies[i]->GetAABB().tRight + rigidBodies[i]->GetAABB().bLeft) / 2.f;
-				sf::Vector2f halfSizeB = (rigidBodies[j]->GetAABB().tRight + rigidBodies[j]->GetAABB().bLeft) / 2.f;
+			
+				sf::Vector2f halfSizeA = (rigidBodies[i]->GetAABB().tRight + rigidBodies[i]->GetAABB().bLeft)  *.7f;// / 2.f;
+				sf::Vector2f halfSizeB = (rigidBodies[j]->GetAABB().tRight + rigidBodies[j]->GetAABB().bLeft)  *.7f;// / 2.f;
 
 				sf::Vector2f gap = sf::Vector2f(abs(distance.x), abs(distance.y)) - (halfSizeA + halfSizeB);
 				
@@ -163,7 +182,7 @@ void PhysicsEngine::ResolveCollisions()
 	{
 		auto pair = p.first;
 		float minBounce = min(pair.rigidbodyA->GetBounciness(), pair.rigidbodyB->GetBounciness());
-		float velAlongNormal = DotProduct(pair.rigidbodyA->GetCurVelocity() - pair.rigidbodyA->GetCurVelocity(), collisions[pair].collisionNormal);
+		float velAlongNormal = DotProduct(pair.rigidbodyB->GetCurVelocity() - pair.rigidbodyA->GetCurVelocity(), collisions[pair].collisionNormal);
 		if (velAlongNormal > 0) continue;
 
 		float j = -(1 + minBounce) * velAlongNormal;
@@ -184,7 +203,7 @@ void PhysicsEngine::ResolveCollisions()
 	
 		// ... update velocities
 		pair.rigidbodyA->SetCurVelocity(pair.rigidbodyA->GetCurVelocity() - impulse * invMassA);
-		pair.rigidbodyB->SetCurVelocity(pair.rigidbodyA->GetCurVelocity() + impulse * invMassB);
+		pair.rigidbodyB->SetCurVelocity(pair.rigidbodyB->GetCurVelocity() + impulse * invMassB);
 
 		if (abs(collisions[pair].penetration) > 0.01f) {
 			PositionalCorrection(pair);

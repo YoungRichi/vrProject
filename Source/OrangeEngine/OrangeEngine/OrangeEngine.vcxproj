@@ -41,7 +41,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
@@ -161,6 +161,8 @@
     <ClCompile Include="..\..\main.cpp" />
     <ClCompile Include="Actor.cpp" />
     <ClCompile Include="ActorComponent.cpp" />
+    <ClCompile Include="AudioComponent.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="Draw.cpp" />
     <ClCompile Include="GameObjectManager.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
@@ -176,6 +178,7 @@
     <ClCompile Include="PhysicsEngine.cpp" />
     <ClCompile Include="PrinterScriptingComponent.cpp" />
     <ClCompile Include="RectangleComponent.cpp" />
+    <ClCompile Include="ResourceHolder.cpp" />
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="ShapeComponent.cpp" />
     <ClCompile Include="ScriptComponent.cpp" />
@@ -189,6 +192,8 @@
     <ClInclude Include="..\..\OrangeEngine.h" />
     <ClInclude Include="Actor.h" />
     <ClInclude Include="ActorComponent.h" />
+    <ClInclude Include="AudioComponent.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="Draw.h" />
     <ClInclude Include="GameObjectManager.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
@@ -204,6 +209,8 @@
     <ClInclude Include="PhysicsEngine.h" />
     <ClInclude Include="PrinterScriptingComponent.h" />
     <ClInclude Include="RectangleComponent.h" />
+    <ClInclude Include="ResourceHolder.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="ShapeComponent.h" />
     <ClInclude Include="ScriptComponent.h" />

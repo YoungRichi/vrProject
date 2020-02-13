@@ -40,8 +40,6 @@ public:
 	void SetObeysGravity(bool value) { rb->SetObeysGravity(value); }
 	void SetMass(float value) { rb->SetMass(value); }
 
-
-
 	oTransform* GetTransform() { return transform; }
 	oRigidBody* GetRigidbody() { return rb; }
 	oInputManager* GetInput() { return input; }

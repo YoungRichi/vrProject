@@ -6,6 +6,7 @@
 #include "Draw.h"
 #include "ShapeComponent.h"
 #include "RectangleComponent.h"
+#include "AudioComponent.h"
 
 
 Draw::Draw()
@@ -87,7 +88,7 @@ void Draw::RenderActors(vector<Actor*>* actors) {
 				window->draw(shape, (*it)->GetWorldTransform()->getTransform());
 			}			
 		}
-		else
+		else if ((*it)->GetComponent("rect"))
 		{
 			RectangleComponent* r = (RectangleComponent*)(*it)->GetComponent("rect");
 
@@ -96,6 +97,20 @@ void Draw::RenderActors(vector<Actor*>* actors) {
 
 			shape.setFillColor(r->GetColor());
 			window->draw(shape, (*it)->GetWorldTransform()->getTransform());
+		}
+		else
+		{
+			AudioComponent * a = (AudioComponent*)(*it)->GetComponent("audio");
+
+			if (a)
+			{
+				sf::SoundBuffer buffers;
+				buffers.loadFromFile("audio/file_example_WAV_1MG.wav");
+				sound->setBuffer(buffers);
+				sound->play();
+				
+			}
+			
 		}
 	}
 

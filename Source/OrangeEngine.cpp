@@ -250,7 +250,7 @@ void OrangeEngine::Run()
 {
 	Draw d;
 	ScriptingSystem ss(&actors);
-	
+
 	ss.Run();
 
 	d.RenderSplashScreen();
@@ -264,6 +264,8 @@ void OrangeEngine::Run()
 	{
 		sf::Clock clock;
 		sf::Time timeSinceLastUpdate = sf::Time::Zero;
+
+
 		while (d.window->isOpen())
 		{
 			sf::Time elapsedTime = clock.restart();
