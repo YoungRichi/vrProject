@@ -123,3 +123,14 @@ void Actor::Update(float msec)
 		//exit(0);
 	}
 }
+
+void Actor::Audio(std::string string)
+{
+	sf::SoundBuffer buffer;
+	sf::Sound sound;
+
+	buffer.loadFromFile(string);
+	sound.setBuffer(buffer);
+	sound.play();
+}
+

@@ -69,10 +69,10 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	//star->GetTransform()->Rotate(90.f);
 
 	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow));
-	star->AddComponent(new AudioComponent("audio/file_example_WAV_1MG.wav"));
+	star->Audio("Audio/file_example_WAV_1MG.wav");
 	//sf::SoundBuffer  buffers;
 	//sf::Sound sounds;
-	//buffers.loadFromFile("audio/file_example_WAV_1MG.wav");
+	//buffers.loadFromFile("Audio/file_example_WAV_1MG.wav");
 	//sounds.setBuffer(buffers);
 	//sounds.play();
 	star->GetTransform()->Translate(100, 0);

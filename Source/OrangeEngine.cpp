@@ -1,6 +1,7 @@
 ﻿#pragma once
 #define NOMINMAX
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <SFML/Window/Event.hpp>
 #include "OrangeEngine.h"
 #include <iostream>
@@ -13,6 +14,7 @@
 #include "OrangeEngine/OrangeEngine/ScriptingSystem.h"
 #include <time.h>
 #include "../PhysicsEngine.h"
+#include "../AudioComponent.h"
 
 using namespace std;
 const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
@@ -278,7 +280,8 @@ void OrangeEngine::Run()
 				//processEvents(); Handle Input Here
 				for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
 				{
-					(*it)->Update(TimePerFrame.asMilliseconds());
+					(*it)->Update(TimePerFrame.asSeconds());
+			
 				}
 				
 				d.RenderActors(&actors);

@@ -92,26 +92,18 @@ void Draw::RenderActors(vector<Actor*>* actors) {
 		{
 			RectangleComponent* r = (RectangleComponent*)(*it)->GetComponent("rect");
 
-			sf::RectangleShape shape;
-			shape.setSize(sf::Vector2f(r->GetWidth(), r->GetHeight()));
-
-			shape.setFillColor(r->GetColor());
-			window->draw(shape, (*it)->GetWorldTransform()->getTransform());
-		}
-		else
-		{
-			AudioComponent * a = (AudioComponent*)(*it)->GetComponent("audio");
-
-			if (a)
+			if (r)
 			{
-				sf::SoundBuffer buffers;
-				buffers.loadFromFile("audio/file_example_WAV_1MG.wav");
-				sound->setBuffer(buffers);
-				sound->play();
-				
+				sf::RectangleShape shape;
+				shape.setSize(sf::Vector2f(r->GetWidth(), r->GetHeight()));
+
+				shape.setFillColor(r->GetColor());
+				window->draw(shape, (*it)->GetWorldTransform()->getTransform());
 			}
-			
+
 		}
+		
+
 	}
 
 	window->display();

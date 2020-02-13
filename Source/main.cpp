@@ -13,6 +13,7 @@
 #include "LuaPlus.h"
 #include "../Actor.h"
 #include "../Scene1.h"
+#include "SFML\Audio.hpp"
 
 int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE previousInstance, PSTR cmdLine, INT nCmdShow)
 {
@@ -27,6 +28,12 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE previousInstance, PSTR cmdLi
 
 	if (Orange->InitInstance())
 	{
+		//sf::SoundBuffer  buffers;
+		//sf::Sound sounds;
+		//buffers.loadFromFile("Audio/file_example_WAV_1MG.wav");
+		//sounds.setBuffer(buffers);
+		//sounds.play();
+
 		ss.buildScene(Orange);
 		Orange->Run();
 	}

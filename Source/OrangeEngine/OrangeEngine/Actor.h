@@ -3,6 +3,7 @@
 #define NOMINMAX
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include "ActorComponent.h"
 #include "oRigidBody.h"
 #include <string>
@@ -40,6 +41,7 @@ public:
 	void SetObeysGravity(bool value) { rb->SetObeysGravity(value); }
 	void SetMass(float value) { rb->SetMass(value); }
 
+	void Audio(std::string string);
 	oTransform* GetTransform() { return transform; }
 	oRigidBody* GetRigidbody() { return rb; }
 	oInputManager* GetInput() { return input; }
