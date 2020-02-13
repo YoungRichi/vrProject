@@ -8,13 +8,9 @@ class AudioComponent : public ActorComponent
 {
 public:
 	AudioComponent();
-	AudioComponent(int e, std::string c,bool p);
-	void SetBuffer(int b);
-	float GetBuffer();
-	void SetPlay(bool p);
-	bool getPlay();
-	void SetName(std::string soundname);
-	std::string getString();
+	AudioComponent(std::string c);
+	void SetName(std::string soundname); 
+	std::string getString() ;
 	void playAudio(int i);
 
 
