@@ -5,6 +5,7 @@
 #include "PhysicsEngine.h"
 #include "Actor.h"
 #include <cmath>
+#include <iostream>
 
 
 oRigidBody::oRigidBody(PhysicsEngine* phEngine)
@@ -69,7 +70,13 @@ void oRigidBody::CalcAABB()
 	sf::FloatRect bounds = GetActor()->GetTransform()->GetGlobalBounds();
 	aabb.bLeft.x = bounds.left;
 	aabb.bLeft.y = bounds.top + bounds.height;
-
-	aabb.tRight.x = bounds.left + bounds.width;;
+	
+	aabb.tRight.x = bounds.left + bounds.width;
 	aabb.tRight.y = bounds.top;
+
+	/*aabb.bLeft.x = bounds.left;
+	aabb.bLeft.y = bounds.top;
+
+	aabb.tRight.x = bounds.left + bounds.width;
+	aabb.tRight.y = bounds.top - bounds.height;*/
 }

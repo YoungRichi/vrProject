@@ -60,16 +60,21 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	sun->GetTransform()->Rotate(90);*/
 
 	Actor* star = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
-	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow));
-	star->GetTransform()->Translate(100, 0);
+	star->AddComponent(new RectangleComponent(140, 100, sf::Color::Yellow));
+	star->GetTransform()->Translate(-10, 0);
+	star->SetMass(1000.f);
+	star->GetRigidbody()->SetBounciness(.5f);
+	//star->GetTransform()->Rotate(90.f);
 	//star->GetTransform()->Scale(0.5, 0.5);
 	//moon->AddChild(star);
+	//star->SetObeysGravity(false);
 
 	Actor* platform = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	//platform->AddComponent(new ShapeComponent(300, 4, sf::Color::White));
 	platform->AddComponent(new RectangleComponent(300, 40, sf::Color::White));
 	platform->GetTransform()->Translate(0, 300);
 	//platform->GetTransform()->Scale(50, 4);
+	platform->SetMass(0.f);
 	platform->SetObeysGravity(false);
 	//star->AddChild(platform);
 
@@ -78,19 +83,10 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	Orange->AddActor(star);
 	Orange->AddActor(platform);
 
-	Orange->Run();
 	//delete(sun);
 
 	//delete(sun);
 }
 
-/*void Scene1::update(sf::Time elapsedTime)
-{
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-	{
-		// left key is pressed: move our character
-		//sun.move(1, 0);
-		exit(0);
-	}
-}*/
+
 

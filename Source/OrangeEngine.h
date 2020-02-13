@@ -52,7 +52,7 @@ public:
 	void AddActor(Actor* _actor);
 	void update(sf::Time elapsedTime);
 	PhysicsEngine* GetPhysics() { return physicsEngine; }
-
+	
 	void CreatePhysics();
 	void DestroyPhysics();
 };

@@ -36,7 +36,7 @@ public:
 	void AddChild(Actor* s);
 	virtual void Update(float msec);
 	void SetObeysGravity(bool value) { rb->SetObeysGravity(value); }
-
+	void SetMass(float value) { rb->SetMass(value); }
 	oTransform* GetTransform() { return transform; }
 	oRigidBody* GetRigidbody() { return rb; }
 

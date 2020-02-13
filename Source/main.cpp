@@ -28,6 +28,7 @@ int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE previousInstance, PSTR cmdLi
 	if (Orange->InitInstance())
 	{
 		ss.buildScene(Orange);
+		Orange->Run();
 	}
 
 	return 0;

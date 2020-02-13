@@ -108,13 +108,13 @@ void Actor::Update(float msec)
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 	{
-		this->GetTransform()->Translate(0, 10);
+		this->GetTransform()->Translate(0, -10);
 	}
 
 
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
-		this->GetTransform()->Translate(0, -10);
+		this->GetTransform()->Translate(0, 10);
 	}
 
 	if (sf::Mouse::isButtonPressed(sf::Mouse::Left))
