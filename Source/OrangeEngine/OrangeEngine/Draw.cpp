@@ -87,7 +87,7 @@ void Draw::RenderActors(vector<Actor*>* actors) {
 				window->draw(shape, (*it)->GetWorldTransform()->getTransform());
 			}			
 		}
-		else
+		else if
 		{
 			RectangleComponent* r = (RectangleComponent*)(*it)->GetComponent("rect");
 
