@@ -4,6 +4,7 @@
 #include "ScriptingSystem.h"
 #include "ShapeComponent.h"
 #include "RectangleComponent.h"
+#include "AudioComponent.h"
 #include "oTransform.h"
 
 #include "oRigidBody.h"
@@ -60,11 +61,21 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	sun->GetTransform()->Rotate(90);*/
 
 	Actor* star = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
+
 	star->AddComponent(new RectangleComponent(140, 100, sf::Color::Yellow));
 	star->GetTransform()->Translate(-10, 0);
 	star->SetMass(1000.f);
 	star->GetRigidbody()->SetBounciness(.5f);
 	//star->GetTransform()->Rotate(90.f);
+
+	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow));
+	star->AddComponent(new AudioComponent("audio/file_example_WAV_1MG.wav"));
+	//sf::SoundBuffer  buffers;
+	//sf::Sound sounds;
+	//buffers.loadFromFile("audio/file_example_WAV_1MG.wav");
+	//sounds.setBuffer(buffers);
+	//sounds.play();
+	star->GetTransform()->Translate(100, 0);
 	//star->GetTransform()->Scale(0.5, 0.5);
 	//moon->AddChild(star);
 	//star->SetObeysGravity(false);
