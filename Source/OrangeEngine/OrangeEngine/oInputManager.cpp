@@ -63,7 +63,7 @@ void oInputManager::UpdateKey(float sec)
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 	{
 		//a->GetTransform()->Translate(0, -10);
-		//exit(7);
+		exit(7);
 	}
 
 
