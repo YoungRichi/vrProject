@@ -1,18 +1,18 @@
 #define NOMINMAX
 #include <SFML/Graphics.hpp>
 #include "Scene1.h"
-#include "ScriptingSystem.h"
+#include "ScriptComponent.h"
 #include "ShapeComponent.h"
 #include "RectangleComponent.h"
 #include "AudioComponent.h"
 #include "oTransform.h"
-
+#include <string>
 #include "oRigidBody.h"
 
 
 Scene1::Scene1()
 {
-	
+	lua.open_libraries(sol::lib::base);
 }
 
 
@@ -23,10 +23,10 @@ Scene1::~Scene1()
 void Scene1::buildScene(OrangeEngine* Orange)
 {
 	
-
+		
 	sf::Time t1 = sf::seconds(0.1f);
 	float milli = t1.asMilliseconds();
-	
+
 	//Actor* sun = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	////Actor* sun = new Actor(&ot, new oRigidBody(Orange->GetPhysics()));
 	//sun->AddComponent(new ShapeComponent(30, 4, sf::Color::Red));
@@ -62,15 +62,17 @@ void Scene1::buildScene(OrangeEngine* Orange)
 
 	Actor* star = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 
-	star->AddComponent(new RectangleComponent(140, 100, sf::Color::Yellow));
+	star->AddComponent(new RectangleComponent(140, 100, sf::Color::Yellow,lua));
 	star->AddComponent(new AudioComponent("Audio/file_example_WAV_1MG.wav"));
+	star->AddComponent(new ScriptComponent("myScript.lua", lua));
 	star->GetAudio()->PlayAudio();
 	star->GetTransform()->Translate(-10, 0);
 	star->SetMass(1000.f);
 	star->GetRigidbody()->SetBounciness(.5f);
+	
 	//star->GetTransform()->Rotate(90.f);
 
-	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow));
+	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow, lua));
 	//star->Audio("Audio/file_example_WAV_1MG.wav");
 	//sf::SoundBuffer  buffers;
 	//sf::Sound sounds;
@@ -86,7 +88,7 @@ void Scene1::buildScene(OrangeEngine* Orange)
 
 	Actor* platform = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 	//platform->AddComponent(new ShapeComponent(300, 4, sf::Color::White));
-	platform->AddComponent(new RectangleComponent(300, 40, sf::Color::White));
+	platform->AddComponent(new RectangleComponent(300, 40, sf::Color::White, lua));
 	platform->GetTransform()->Translate(0, 300);
 	platform->SetMass(1000.0f);
 	//platform->GetTransform()->Scale(50, 4);

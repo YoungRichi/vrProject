@@ -10,6 +10,7 @@
 #include <windows.h>
 #include <vector>
 #include "AudioComponent.h"
+#include "ScriptComponent.h"
 
 using namespace std;
 namespace sf
@@ -20,6 +21,7 @@ class oTransform;
 class oRigidBody;
 class oInputManager;
 class AudioComponent;
+class ScriptComponent;
 
 class Actor
 {
@@ -48,12 +50,14 @@ public:
 
 	AudioComponent* GetAudio() { return audio; };
 
+	ScriptComponent* GetScript() { return script; };
 	GUID Id() const { return id; }
 protected:
 	oTransform* transform;
 	oRigidBody* rb;
 	oInputManager* input;
 	AudioComponent* audio;
+	ScriptComponent* script;
 	Actor* parent;
 	//sf::Transform* worldTransform;
 	//sf::Transform* localTransform;

@@ -99,16 +99,11 @@
     <ClCompile Include="LuaStateManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-
-    <ClCompile Include="ScriptingSystem.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="_string.cpp">
       <Filter>Utility</Filter>
     </ClCompile>
     <ClCompile Include="RectangleComponent.cpp">
       <Filter>Components\Shape</Filter>
-
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ResourceHolder.cpp">
@@ -170,12 +165,7 @@
     <ClInclude Include="LuaStateManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-
-    <ClInclude Include="ScriptingSystem.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="_string.h">
-
       <Filter>Utility</Filter>
     </ClInclude>
     <ClInclude Include="..\..\OrangeEngine.h">
@@ -183,7 +173,6 @@
     </ClInclude>
     <ClInclude Include="RectangleComponent.h">
       <Filter>Components\Shape</Filter>
-
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ResourceHolder.h">
@@ -197,7 +186,6 @@
     </ClInclude>
     <ClInclude Include="AudioManager.h">
       <Filter>Components\Audio</Filter>
-
     </ClInclude>
   </ItemGroup>
 </Project>

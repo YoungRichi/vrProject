@@ -125,18 +125,19 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>false</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)\SFML-2.5.1\include;$(ProjectDir)\LuaPlus;$(ProjectDir)\LuaPlus\src;$(ProjectDir)\LuaPlus\tilde;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)\SFML-2.5.1\include;$(ProjectDir)\LuaPlus;$(ProjectDir)\LuaPlus\src;$(ProjectDir)\LuaPlus\tilde;$(ProjectDir)\sol;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalUsingDirectories>
       </AdditionalUsingDirectories>
       <DisableSpecificWarnings>4996</DisableSpecificWarnings>
       <WholeProgramOptimization>false</WholeProgramOptimization>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>LuaPlus.lib;sfml-graphics.lib;sfml-window.lib;sfml-system.lib;sfml-audio.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(ProjectDir)\SFML-2.5.1\lib;$(ProjectDir)\SFML-2.5.1\bin</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(ProjectDir)\SFML-2.5.1\lib;$(ProjectDir)\SFML-2.5.1\bin;$(ProjectDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -182,7 +183,6 @@
     <ClCompile Include="Scene1.cpp" />
     <ClCompile Include="ShapeComponent.cpp" />
     <ClCompile Include="ScriptComponent.cpp" />
-    <ClCompile Include="ScriptingSystem.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
     <ClCompile Include="_string.cpp" />
   </ItemGroup>
@@ -214,7 +214,6 @@
     <ClInclude Include="Scene1.h" />
     <ClInclude Include="ShapeComponent.h" />
     <ClInclude Include="ScriptComponent.h" />
-    <ClInclude Include="ScriptingSystem.h" />
     <ClInclude Include="SplashScreen.h" />
     <ClInclude Include="_string.h" />
   </ItemGroup>

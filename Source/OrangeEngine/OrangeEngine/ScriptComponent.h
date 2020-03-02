@@ -1,18 +1,22 @@
-#ifndef __SCRIPT_COMPONENT_H__
-#define __SCRIPT_COMPONENT_H__
+#pragma once
 #include <string>
 #include "ActorComponent.h"
+#include "../sol/sol.hpp"
 
 using namespace std;
 
 class ScriptComponent : public ActorComponent
 {
-private:
-	string path;
-
 public:
-	ScriptComponent(string _path);
-	string GetPath();
+	ScriptComponent(string _fileName, sol::state &_lua);
+	~ScriptComponent(void);
+
+	virtual void Update(float dt);
+
+	bool fileLoaded = false;
+	sol::state lua;
+
+private:
+	string s;
 };
 
-#endif

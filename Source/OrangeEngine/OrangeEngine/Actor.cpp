@@ -46,6 +46,12 @@ void Actor::AddComponent(ActorComponent* component)
 	{
 		audio = static_cast<AudioComponent*>(component);
 	}
+
+	else if (component->componentName == "ScriptComponent")
+	{
+		script = static_cast<ScriptComponent*>(component);
+	}
+
 }
 
 ActorComponent* Actor::GetComponent(string componentName)

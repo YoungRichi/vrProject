@@ -1,13 +1,19 @@
 #include "ScriptComponent.h"
+using namespace std;
 
-ScriptComponent::ScriptComponent(string _path)
+//ScriptComponent::ScriptComponent()
+
+
+ScriptComponent::ScriptComponent(string _fileName, sol::state &_lua)
 {
-	path = _path;
 	componentName = "ScriptComponent";
-	CoCreateGuid(&id);
+	_lua.script_file(_fileName);
 }
 
-string ScriptComponent::GetPath()
+ScriptComponent::~ScriptComponent(void)
 {
-	return path;
+}
+
+void ScriptComponent::Update(float dt)
+{
 }

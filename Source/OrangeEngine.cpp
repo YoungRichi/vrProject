@@ -11,7 +11,6 @@
 #include <strsafe.h>
 #include <tchar.h>
 #include <string>
-#include "OrangeEngine/OrangeEngine/ScriptingSystem.h"
 #include <time.h>
 #include "../PhysicsEngine.h"
 #include "../AudioComponent.h"
@@ -251,9 +250,7 @@ bool OrangeEngine::InitInstance()
 void OrangeEngine::Run()
 {
 	Draw d;
-	ScriptingSystem ss(&actors);
 
-	ss.Run();
 
 	d.RenderSplashScreen();
 
