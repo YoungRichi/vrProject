@@ -12,14 +12,6 @@ RectangleComponent::RectangleComponent(sol::state &_luaPlus)
 	width = 0.f;
 	height  = 0.f;
 
-
-	_luaPlus.set("Transform", this);
-
-	_luaPlus["GetWidth"] = &RectangleComponent::GetWidth;
-	_luaPlus["SetWidth"] = &RectangleComponent::SetWidth;
-
-	_luaPlus["GetHeight"] = &RectangleComponent::GetHeight;
-	_luaPlus["SetHeight"] = &RectangleComponent::SetHeight;
 }
 
 RectangleComponent::RectangleComponent(float w, float h, sf::Color c, sol::state &_luaPlus)

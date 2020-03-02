@@ -3,7 +3,7 @@
 #include"ShapeComponent.h"
 #include "RectangleComponent.h"
 
-oTransform::oTransform()
+oTransform::oTransform(sol::state &_luaPlus)
 {
 	transform = new sf::Transformable();
 	//transforms
@@ -19,8 +19,13 @@ oTransform::oTransform()
 	//transform = translate * rotation * scale;
 	//transform = scale * rotation * translate;
 	componentName = "transformComponent";
+
+
+	_luaPlus.set("transform", this);
+
+	_luaPlus["Scale"] = &oTransform::Scale;
 }
-oTransform::oTransform(sf::Vector2<float> trans)
+oTransform::oTransform(sf::Vector2<float> trans, sol::state &_luaPlus)
 {
 	transform = new sf::Transformable();
 
@@ -32,8 +37,12 @@ oTransform::oTransform(sf::Vector2<float> trans)
 	//scalev = sf::Vector2<float>(0, 0);
 	//transform = translate * rotation * scale;
 	componentName = "transformComponent";
+
+	_luaPlus.set("transform", this);
+
+	_luaPlus["Scale"] = &oTransform::Scale;
 }
-oTransform::oTransform(sf::Vector2<float> trans, float angle, sf::Vector2<float> scal)
+oTransform::oTransform(sf::Vector2<float> trans, float angle, sf::Vector2<float> scal, sol::state &_luaPlus)
 {
 	transform = new sf::Transformable();
 
@@ -46,6 +55,10 @@ oTransform::oTransform(sf::Vector2<float> trans, float angle, sf::Vector2<float>
 	//transform = translate * rotation * scale;
 	//transform = scale * rotation * translate;
 	componentName = "transformComponent";
+
+	_luaPlus.set("transform", this);
+
+	_luaPlus["Scale"] = &oTransform::Scale;
 }
 
 oTransform::~oTransform()

@@ -12,8 +12,8 @@ class Scene1
 public:
 	Scene1();
 	~Scene1();
-	void buildScene(OrangeEngine* Orange);
-	sol::state lua;
+	void buildScene(OrangeEngine* Orange, sol::state &lua);
+	
 	void update(sf::Time dt);
 };
 

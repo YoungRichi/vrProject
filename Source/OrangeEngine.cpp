@@ -15,6 +15,7 @@
 #include "../PhysicsEngine.h"
 #include "../AudioComponent.h"
 
+
 using namespace std;
 const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
 
@@ -26,6 +27,7 @@ OrangeEngine* OrangeEngine::GetInstance()
 {
 	if (!instance)
 	{
+
 		instance = new OrangeEngine();
 		instance->CreatePhysics();
 	}
@@ -56,6 +58,7 @@ void OrangeEngine::Print(string message)
 bool OrangeEngine::IsOnlyInstance(LPCTSTR gameTitle)
 {
 	HANDLE handle = CreateMutex(NULL, TRUE, gameTitle);
+
 	if (GetLastError() != ERROR_SUCCESS)
 	{
 		HWND hWnd = FindWindow(gameTitle, NULL);

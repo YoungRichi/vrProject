@@ -4,13 +4,13 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Vector2.hpp>
 #include "ActorComponent.h"
-
+#include <sol.hpp>
 
 class oTransform : public ActorComponent {
 public:
-	oTransform();
-	oTransform(sf::Vector2<float> trans);
-	oTransform(sf::Vector2<float> trans, float angle, sf::Vector2<float> scal);
+	oTransform(sol::state &_luaPlus);
+	oTransform(sf::Vector2<float> trans, sol::state &_luaPlus);
+	oTransform(sf::Vector2<float> trans, float angle, sf::Vector2<float> scal, sol::state &_luaPlus);
 	~oTransform();
 	void Translate(float x, float y);
 	void Rotate(float angle);

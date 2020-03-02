@@ -1,4 +1,3 @@
-#define NOMINMAX
 #include <SFML/Graphics.hpp>
 #include "Scene1.h"
 #include "ScriptComponent.h"
@@ -8,11 +7,11 @@
 #include "oTransform.h"
 #include <string>
 #include "oRigidBody.h"
-
+#include "../sol/sol.hpp"
 
 Scene1::Scene1()
 {
-	lua.open_libraries(sol::lib::base);
+
 }
 
 
@@ -20,7 +19,7 @@ Scene1::~Scene1()
 {
 }
 
-void Scene1::buildScene(OrangeEngine* Orange)
+void Scene1::buildScene(OrangeEngine* Orange,sol::state &lua)
 {
 	
 		
@@ -60,11 +59,11 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	//sun->position->Translate(50, 50);
 	sun->GetTransform()->Rotate(90);*/
 
-	Actor* star = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
+	Actor* star = new Actor(new oTransform(lua), new oRigidBody(Orange->GetPhysics()));
 
 	star->AddComponent(new RectangleComponent(140, 100, sf::Color::Yellow,lua));
 	star->AddComponent(new AudioComponent("Audio/file_example_WAV_1MG.wav"));
-	star->AddComponent(new ScriptComponent("myScript.lua", lua));
+	star->AddComponent(new ScriptComponent("Audio/myScript.lua", lua));
 	star->GetAudio()->PlayAudio();
 	star->GetTransform()->Translate(-10, 0);
 	star->SetMass(1000.f);
@@ -86,7 +85,7 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	//moon->AddChild(star);
 	//star->SetObeysGravity(false);
 
-	Actor* platform = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
+	Actor* platform = new Actor(new oTransform(lua), new oRigidBody(Orange->GetPhysics()));
 	//platform->AddComponent(new ShapeComponent(300, 4, sf::Color::White));
 	platform->AddComponent(new RectangleComponent(300, 40, sf::Color::White, lua));
 	platform->GetTransform()->Translate(0, 300);
