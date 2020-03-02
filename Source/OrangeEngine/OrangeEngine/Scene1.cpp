@@ -63,13 +63,15 @@ void Scene1::buildScene(OrangeEngine* Orange)
 	Actor* star = new Actor(new oTransform(), new oRigidBody(Orange->GetPhysics()));
 
 	star->AddComponent(new RectangleComponent(140, 100, sf::Color::Yellow));
+	star->AddComponent(new AudioComponent("Audio/file_example_WAV_1MG.wav"));
+	star->GetAudio()->PlayAudio();
 	star->GetTransform()->Translate(-10, 0);
 	star->SetMass(1000.f);
 	star->GetRigidbody()->SetBounciness(.5f);
 	//star->GetTransform()->Rotate(90.f);
 
 	star->AddComponent(new RectangleComponent(40, 100, sf::Color::Yellow));
-	star->Audio("Audio/file_example_WAV_1MG.wav");
+	//star->Audio("Audio/file_example_WAV_1MG.wav");
 	//sf::SoundBuffer  buffers;
 	//sf::Sound sounds;
 	//buffers.loadFromFile("Audio/file_example_WAV_1MG.wav");

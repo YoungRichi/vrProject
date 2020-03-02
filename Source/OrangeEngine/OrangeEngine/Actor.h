@@ -9,7 +9,7 @@
 #include <string>
 #include <windows.h>
 #include <vector>
-
+#include "AudioComponent.h"
 
 using namespace std;
 namespace sf
@@ -19,6 +19,7 @@ namespace sf
 class oTransform;
 class oRigidBody;
 class oInputManager;
+class AudioComponent;
 
 class Actor
 {
@@ -41,17 +42,18 @@ public:
 	void SetObeysGravity(bool value) { rb->SetObeysGravity(value); }
 	void SetMass(float value) { rb->SetMass(value); }
 
-	void Audio(std::string string);
 	oTransform* GetTransform() { return transform; }
 	oRigidBody* GetRigidbody() { return rb; }
 	oInputManager* GetInput() { return input; }
+
+	AudioComponent* GetAudio() { return audio; };
 
 	GUID Id() const { return id; }
 protected:
 	oTransform* transform;
 	oRigidBody* rb;
 	oInputManager* input;
-
+	AudioComponent* audio;
 	Actor* parent;
 	//sf::Transform* worldTransform;
 	//sf::Transform* localTransform;

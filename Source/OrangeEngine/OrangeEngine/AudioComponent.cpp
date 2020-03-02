@@ -1,29 +1,41 @@
-#include <SFML/Graphics.hpp>
 #include "AudioComponent.h"
+using namespace std;
 
 AudioComponent::AudioComponent()
 {
-	soundname = "";
-	componentName = "audio";
+	componentName = "AudioComponent";
+
 }
 
-
-AudioComponent::AudioComponent(std::string c)
+AudioComponent::AudioComponent(string fileToSet)
 {
-	soundname = c;
-	componentName = "audio";
-
+	componentName = "AudioComponent";
+	setAudio(fileToSet);
 }
 
-
-void AudioComponent::SetName(std::string s)
+AudioComponent::~AudioComponent(void)
 {
-	soundname = s;
 }
 
-std::string AudioComponent::getString()
+void AudioComponent::Update(float dt)
 {
-	return soundname;
 }
 
+void AudioComponent::setAudio(string fileToSet)
+{
+	if (!audioFile.openFromFile(fileToSet))
+	{
+		fileLoaded = false;
+		return;
+	}
 
+	fileLoaded = true;
+}
+
+void AudioComponent::PlayAudio()
+{
+	if (fileLoaded)
+	{
+		audioFile.play();
+	}
+}

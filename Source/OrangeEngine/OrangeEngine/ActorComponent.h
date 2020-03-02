@@ -19,7 +19,7 @@ public:
 	ActorComponent();
 	Actor* GetActor() { return actor; }
 	void SetActor(Actor* a) { actor = a; }
-	
+
 
 };
 

@@ -42,6 +42,10 @@ void Actor::AddComponent(ActorComponent* component)
 {
 	components.push_back(component);
 	component->SetActor(this);
+	if (component->componentName == "AudioComponent")
+	{
+		audio = static_cast<AudioComponent*>(component);
+	}
 }
 
 ActorComponent* Actor::GetComponent(string componentName)
@@ -122,15 +126,5 @@ void Actor::Update(float msec)
 	{
 		//exit(0);
 	}
-}
-
-void Actor::Audio(std::string string)
-{
-	sf::SoundBuffer buffer;
-	sf::Sound sound;
-
-	buffer.loadFromFile(string);
-	sound.setBuffer(buffer);
-	sound.play();
 }
 

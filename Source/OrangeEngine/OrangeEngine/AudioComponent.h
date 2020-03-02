@@ -1,21 +1,26 @@
-#ifndef __Audio_COMPONENT_H__
-#define __Audio_COMPONENT_H__
-#include <SFML/Audio.hpp>
-#include "ActorComponent.h"
+#pragma once
 
+#include "ActorComponent.h"
+#include "SFML/Audio.hpp"
+#include <string.h>
+
+using namespace std;
 
 class AudioComponent : public ActorComponent
 {
 public:
 	AudioComponent();
-	AudioComponent(std::string c);
-	void SetName(std::string soundname); 
-	std::string getString() ;
+	AudioComponent(string fileToSet);
 
+	~AudioComponent(void);
 
-private:
-	std::string soundname;
+	virtual void Update(float dt);
 
+	void setAudio(string fileToSet);
+	void PlayAudio();
+
+	bool fileLoaded = false;
+
+protected:
+	sf::Music audioFile;
 };
-
-#endif 
