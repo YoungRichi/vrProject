@@ -184,6 +184,10 @@
     <ClCompile Include="ShapeComponent.cpp" />
     <ClCompile Include="ScriptComponent.cpp" />
     <ClCompile Include="SplashScreen.cpp" />
+    <ClCompile Include="tinyxml\tinystr.cpp" />
+    <ClCompile Include="tinyxml\tinyxml.cpp" />
+    <ClCompile Include="tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="tinyxml\tinyxmlparser.cpp" />
     <ClCompile Include="_string.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -215,7 +219,12 @@
     <ClInclude Include="ShapeComponent.h" />
     <ClInclude Include="ScriptComponent.h" />
     <ClInclude Include="SplashScreen.h" />
+    <ClInclude Include="tinyxml\tinystr.h" />
+    <ClInclude Include="tinyxml\tinyxml.h" />
     <ClInclude Include="_string.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="tinyxml\SceneXML.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

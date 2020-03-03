@@ -1,0 +1,17 @@
+<?xml version="1.0" ?>
+<file>
+  <people>
+    <person>
+      <forename>Andrew</forename>
+      <surname>Jones</surname>
+    </person>
+    <person>
+      <forename>David</forename>
+      <surname>Matthews</surname>
+    </person>
+    <person>
+      <forename>Jason</forename>
+      <surname>Perkins</surname>
+    </person>
+  </people>
+</file>

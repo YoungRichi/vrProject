@@ -41,6 +41,7 @@ int main()
 		//sounds.play();
 
 		ss.buildScene(Orange, lua);
+		//Orange->CreateXML();
 		Orange->Run();
 	}
 

@@ -1,1 +1,1 @@
-Scale(transform,20.0,20.0)
+Scale(transform, 1.0, 1.0)

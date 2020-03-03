@@ -46,6 +46,9 @@
     <Filter Include="Components\Audio">
       <UniqueIdentifier>{f3145f1e-ec5c-40db-bb22-06626f56ffb7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Components\TInyXML">
+      <UniqueIdentifier>{c7bef3e7-855d-4152-b824-d41e3b383c55}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.cpp">
@@ -114,6 +117,18 @@
     </ClCompile>
     <ClCompile Include="AudioComponent.cpp">
       <Filter>Components\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinystr.cpp">
+      <Filter>Components\TInyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinyxml.cpp">
+      <Filter>Components\TInyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinyxmlerror.cpp">
+      <Filter>Components\TInyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="tinyxml\tinyxmlparser.cpp">
+      <Filter>Components\TInyXML</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -187,5 +202,16 @@
     <ClInclude Include="AudioManager.h">
       <Filter>Components\Audio</Filter>
     </ClInclude>
+    <ClInclude Include="tinyxml\tinystr.h">
+      <Filter>Components\TInyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="tinyxml\tinyxml.h">
+      <Filter>Components\TInyXML</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="tinyxml\SceneXML.xml">
+      <Filter>Components\TInyXML</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

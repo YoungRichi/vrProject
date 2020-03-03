@@ -59,7 +59,7 @@ public:
 	PhysicsEngine* GetPhysics() { return physicsEngine; }
 	void CreatePhysics();
 	void DestroyPhysics();
-
+	void CreateXML();
 	void CreateInputManager();
 
 };
