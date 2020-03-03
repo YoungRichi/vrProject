@@ -338,47 +338,43 @@ void OrangeEngine::DestroyPhysics()
 
 void OrangeEngine::CreateXML()
 {
-	//TiXmlDocument doc;
-	//TiXmlElement* msg;
-	//TiXmlDeclaration* decl = new TiXmlDeclaration("1.0", "", "");
-	//doc.LinkEndChild(decl);
+	//test
+	//TiXmlDocument doc("tinyxml/testSceneXML.xml");
+	//doc.LoadFile();
 
-	//TiXmlElement * root = new TiXmlElement("MyApp");
-	//doc.LinkEndChild(root);
+	//TiXmlElement *l_pRootElement = doc.RootElement();
 
-	//TiXmlComment * comment = new TiXmlComment();
-	//comment->SetValue(" Settings for MyApp ");
-	//root->LinkEndChild(comment);
+	//if (NULL != l_pRootElement)
+	//{
+	//	// set of &lt;person&gt; tags
+	//	TiXmlElement *l_pPeople = l_pRootElement->FirstChildElement("people");
 
-	//TiXmlElement * msgs = new TiXmlElement("Messages");
-	//root->LinkEndChild(msgs);
+	//	if (NULL != l_pPeople)
+	//	{
+	//		TiXmlElement *l_pPerson = l_pPeople->FirstChildElement("person");
 
-	//msg = new TiXmlElement("Welcome");
-	//msg->LinkEndChild(new TiXmlText("Welcome to MyApp"));
-	//msgs->LinkEndChild(msg);
+	//		while (l_pPerson)
+	//		{
+	//			TiXmlElement *l_pForename = l_pPerson->FirstChildElement("forename");
 
-	//msg = new TiXmlElement("Farewell");
-	//msg->LinkEndChild(new TiXmlText("Thank you for using MyApp"));
-	//msgs->LinkEndChild(msg);
+	//			if (NULL != l_pForename)
+	//			{
+	//				std::cout << l_pForename->GetText();
+	//			}
 
-	//TiXmlElement * windows = new TiXmlElement("Windows");
-	//root->LinkEndChild(windows);
+	//			TiXmlElement *l_pSurname = l_pPerson->FirstChildElement("surname");
 
-	//TiXmlElement * window;
-	//window = new TiXmlElement("Window");
-	//windows->LinkEndChild(window);
-	//window->SetAttribute("name", "MainFrame");
-	//window->SetAttribute("x", 5);
-	//window->SetAttribute("y", 15);
-	//window->SetAttribute("w", 400);
-	//window->SetAttribute("h", 250);
+	//			if (NULL != l_pSurname)
+	//			{
+	//				std::cout << " " << l_pSurname->GetText();
+	//			}
 
-	//TiXmlElement * cxn = new TiXmlElement("Connection");
-	//root->LinkEndChild(cxn);
-	//cxn->SetAttribute("ip", "192.168.0.1");
-	//cxn->SetDoubleAttribute("timeout", 123.456); // floating point attrib
+	//			std::cout << l_pSurname << std::endl;
 
-	//doc.SaveFile("appsettings.xmlr");
+	//			l_pPerson = l_pPerson->NextSiblingElement("person");
+	//		}
+	//	}
+	//}
 
 	TiXmlDocument doc("tinyxml/SceneXML.xml");
 	doc.LoadFile();
@@ -388,31 +384,37 @@ void OrangeEngine::CreateXML()
 	if (NULL != l_pRootElement)
 	{
 		// set of &lt;person&gt; tags
-		TiXmlElement *l_pPeople = l_pRootElement->FirstChildElement("people");
+		TiXmlElement *l_pGameObject = l_pRootElement->FirstChildElement("GameObject");
 
-		if (NULL != l_pPeople)
+		if (NULL != l_pGameObject)
 		{
-			TiXmlElement *l_pPerson = l_pPeople->FirstChildElement("person");
+			TiXmlElement *l_pTransform = l_pGameObject->FirstChildElement("oTransform");
 
-			while (l_pPerson)
+			while (l_pTransform)
 			{
-				TiXmlElement *l_pForename = l_pPerson->FirstChildElement("forename");
+				TiXmlElement *l_pPosition = l_pGameObject->FirstChildElement("Position");
 
-				if (NULL != l_pForename)
+				if (NULL != l_pPosition)
 				{
-					std::cout << l_pForename->GetText();
+					std::cout << " " << l_pPosition->GetText();
+				}
+				else
+				{
+					std::cout << "variable is null" << endl;
 				}
 
-				TiXmlElement *l_pSurname = l_pPerson->FirstChildElement("surname");
+				//std::cout << l_pPosition << std::endl;
 
-				if (NULL != l_pSurname)
+				TiXmlElement *l_pRotation = l_pGameObject->FirstChildElement("Rotation");
+
+				if (NULL != l_pRotation)
 				{
-					std::cout << " " << l_pSurname->GetText();
+					std::cout << " " << l_pRotation->GetText();
 				}
 
-				std::cout << l_pSurname << std::endl;
+				//std::cout << l_pRotation << std::endl;
 
-				l_pPerson = l_pPerson->NextSiblingElement("person");
+				l_pTransform = l_pTransform->NextSiblingElement("Transform");
 			}
 		}
 	}

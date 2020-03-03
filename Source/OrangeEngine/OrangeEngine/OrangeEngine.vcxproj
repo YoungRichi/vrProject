@@ -225,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <Xml Include="tinyxml\SceneXML.xml" />
+    <Xml Include="tinyxml\testSceneXML.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
