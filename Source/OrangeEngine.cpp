@@ -427,6 +427,16 @@ void OrangeEngine::CreateXML()
 				TiXmlElement *l_pBounciness = l_pRigidbody->FirstChildElement("Bounciness");
 				TiXmlElement *l_pObey_Gravity = l_pRigidbody->FirstChildElement("Obey_Gravity");
 
+				if (NULL != l_pMass)
+				{
+					std::cout << "Mass = " << " " << l_pMass->GetText() << endl;
+				}
+
+				if (NULL != l_pBounciness)
+				{
+					std::cout << "Bounciness = " << " " << l_pBounciness->GetText() << endl;
+				}
+
 				if (NULL != l_pObey_Gravity)
 				{
 					std::cout << "Obeys gravity = " << " " << l_pObey_Gravity->GetText() << endl;
@@ -434,7 +444,67 @@ void OrangeEngine::CreateXML()
 
 			}
 
+			l_pGameObject = l_pGameObject->NextSiblingElement("GameObject");
+		}
 
+		if (NULL != l_pGameObject)
+		{
+			// transform
+			TiXmlElement *l_pTransform = l_pGameObject->FirstChildElement("oTransform");
+
+			if (NULL != l_pTransform)
+			{
+				//position rotation scale
+				TiXmlElement *l_pPosition = l_pTransform->FirstChildElement("Position");
+				TiXmlElement *l_pRotation = l_pTransform->FirstChildElement("Rotation");
+				TiXmlElement *l_pScale = l_pTransform->FirstChildElement("Scale");
+
+
+				if (NULL != l_pPosition)
+				{
+					//positionX positionY
+					std::cout << "Position X:  = " << " " << l_pPosition->Attribute("x") << endl;
+					std::cout << "Position Y:  = " << " " << l_pPosition->Attribute("y") << endl;
+
+				}
+
+			}
+
+			// sprite
+			TiXmlElement *l_pSprite = l_pGameObject->FirstChildElement("Sprite");
+
+			if (NULL != l_pSprite)
+			{
+				std::cout << "GameObject = " << " " << l_pSprite->GetText() << endl;
+			}
+
+			// rigidbody
+			TiXmlElement *l_pRigidbody = l_pGameObject->FirstChildElement("oRigidbody");
+
+			if (NULL != l_pRigidbody)
+			{
+				TiXmlElement *l_pMass = l_pRigidbody->FirstChildElement("Mass");
+				TiXmlElement *l_pBounciness = l_pRigidbody->FirstChildElement("Bounciness");
+				TiXmlElement *l_pObey_Gravity = l_pRigidbody->FirstChildElement("Obey_Gravity");
+
+				if (NULL != l_pMass)
+				{
+					std::cout << "Mass = " << " " << l_pMass->GetText() << endl;
+				}
+
+				if (NULL != l_pBounciness)
+				{
+					std::cout << "Bounciness = " << " " << l_pBounciness->GetText() << endl;
+				}
+
+				if (NULL != l_pObey_Gravity)
+				{
+					std::cout << "Obeys gravity = " << " " << l_pObey_Gravity->GetText() << endl;
+				}
+
+			}
+
+			l_pGameObject = l_pGameObject->NextSiblingElement("GameObject");
 		}
 	}
 	
