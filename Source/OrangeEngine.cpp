@@ -408,6 +408,22 @@ void OrangeEngine::CreateXML()
 
 				}
 
+				if (NULL != l_pRotation)
+				{
+					//positionX positionY
+					std::cout << "Rotation X:  = " << " " << l_pRotation->Attribute("x") << endl;
+					std::cout << "Rotation Y:  = " << " " << l_pRotation->Attribute("y") << endl;
+
+				}
+
+				if (NULL != l_pScale)
+				{
+					//positionX positionY
+					std::cout << "Scale X:  = " << " " << l_pScale->Attribute("x") << endl;
+					std::cout << "Scale Y:  = " << " " << l_pScale->Attribute("y") << endl;
+
+				}
+
 			}
 
 			// sprite
@@ -465,6 +481,22 @@ void OrangeEngine::CreateXML()
 					//positionX positionY
 					std::cout << "Position X:  = " << " " << l_pPosition->Attribute("x") << endl;
 					std::cout << "Position Y:  = " << " " << l_pPosition->Attribute("y") << endl;
+
+				}
+
+				if (NULL != l_pRotation)
+				{
+					//positionX positionY
+					std::cout << "Rotation X:  = " << " " << l_pRotation->Attribute("x") << endl;
+					std::cout << "Rotation Y:  = " << " " << l_pRotation->Attribute("y") << endl;
+
+				}
+
+				if (NULL != l_pScale)
+				{
+					//positionX positionY
+					std::cout << "Scale X:  = " << " " << l_pScale->Attribute("x") << endl;
+					std::cout << "Scale Y:  = " << " " << l_pScale->Attribute("y") << endl;
 
 				}
 
