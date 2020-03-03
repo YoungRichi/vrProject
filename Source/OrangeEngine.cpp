@@ -255,6 +255,8 @@ bool OrangeEngine::InitInstance()
 
 void OrangeEngine::Run()
 {
+
+	CreateXML();
 	Draw d;
 
 
@@ -270,7 +272,6 @@ void OrangeEngine::Run()
 		sf::Clock clock;
 		sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
-		CreateXML();
 
 		while (d.window->isOpen())
 		{
@@ -383,42 +384,57 @@ void OrangeEngine::CreateXML()
 
 	if (NULL != l_pRootElement)
 	{
-		// set of &lt;person&gt; tags
+		// game object
 		TiXmlElement *l_pGameObject = l_pRootElement->FirstChildElement("GameObject");
 
 		if (NULL != l_pGameObject)
 		{
+			// transform
 			TiXmlElement *l_pTransform = l_pGameObject->FirstChildElement("oTransform");
-
-			while (l_pTransform)
+		
+			if (NULL != l_pTransform)
 			{
-				TiXmlElement *l_pPosition = l_pGameObject->FirstChildElement("Position");
+				//position rotation scale
+				TiXmlElement *l_pPosition = l_pTransform->FirstChildElement("Position");
+				TiXmlElement *l_pRotation = l_pTransform->FirstChildElement("Rotation");
+				TiXmlElement *l_pScale = l_pTransform->FirstChildElement("Scale");
 
-				if (NULL != l_pPosition)
+
+				/*if (NULL != l_pPosition)
 				{
-					std::cout << " " << l_pPosition->GetText();
-				}
-				else
-				{
-					std::cout << "variable is null" << endl;
-				}
+					std::cout << " " << l_pPosition->ToText();
+				}*/
 
-				//std::cout << l_pPosition << std::endl;
-
-				TiXmlElement *l_pRotation = l_pGameObject->FirstChildElement("Rotation");
-
-				if (NULL != l_pRotation)
-				{
-					std::cout << " " << l_pRotation->GetText();
-				}
-
-				//std::cout << l_pRotation << std::endl;
-
-				l_pTransform = l_pTransform->NextSiblingElement("Transform");
 			}
+
+			// sprite
+			TiXmlElement *l_pSprite = l_pGameObject->FirstChildElement("Sprite");
+
+			if (NULL != l_pSprite)
+			{
+				std::cout << "GameObject = " << " " << l_pSprite->GetText() << endl;
+			}
+
+			// rigidbody
+			TiXmlElement *l_pRigidbody = l_pGameObject->FirstChildElement("oRigidbody");
+
+			if (NULL != l_pRigidbody)
+			{
+				TiXmlElement *l_pMass = l_pRigidbody->FirstChildElement("Mass");
+				TiXmlElement *l_pBounciness = l_pRigidbody->FirstChildElement("Bounciness");
+				TiXmlElement *l_pObey_Gravity = l_pRigidbody->FirstChildElement("Obey_Gravity");
+
+				if (NULL != l_pObey_Gravity)
+				{
+					std::cout << "Obeys gravity = " << " " << l_pObey_Gravity->GetText() << endl;
+				}
+
+			}
+
+
 		}
 	}
-
+	
 }
 
 void OrangeEngine::AddActor(Actor* _actor)
