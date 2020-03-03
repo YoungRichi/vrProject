@@ -400,10 +400,13 @@ void OrangeEngine::CreateXML()
 				TiXmlElement *l_pScale = l_pTransform->FirstChildElement("Scale");
 
 
-				/*if (NULL != l_pPosition)
+				if (NULL != l_pPosition)
 				{
-					std::cout << " " << l_pPosition->ToText();
-				}*/
+					//positionX positionY
+					std::cout << "Position X:  = " << " " << l_pPosition->Attribute("x") << endl;
+					std::cout << "Position Y:  = " << " " << l_pPosition->Attribute("y") << endl;
+
+				}
 
 			}
 
