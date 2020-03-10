@@ -272,25 +272,51 @@ void OrangeEngine::Run()
 		sf::Clock clock;
 		sf::Time timeSinceLastUpdate = sf::Time::Zero;
 
-
+		sf::Time currentTime, deltaTime;
+		currentTime = clock.getElapsedTime();
 		while (d.window->isOpen())
 		{
-			sf::Time elapsedTime = clock.restart();
-			timeSinceLastUpdate += elapsedTime;
-			//deltaTime += elapsedTime.asSeconds;
-			while (timeSinceLastUpdate > TimePerFrame)
+			deltaTime = clock.getElapsedTime() - currentTime;
+			currentTime = clock.getElapsedTime();
+			// Game loop here
+			// calculate deltaTime
+			// Update input first
+			inputManager->UpdateKey(deltaTime.asSeconds());
+			// Update physics
+			physicsEngine->UpdatePhysics(deltaTime.asSeconds());
+			// Update AI
+			// Etc..
+			for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
 			{
-				timeSinceLastUpdate -= TimePerFrame;
-				update(TimePerFrame);
-				//processEvents(); Handle Input Here
-				for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
-				{
-					(*it)->Update(TimePerFrame.asSeconds());
-					
-				}
-				
-				d.RenderActors(&actors);
+				(*it)->Update(TimePerFrame.asSeconds());
 			}
+
+			// Update Rendering
+			d.RenderActors(&actors);
+			// Update Audio
+
+
+
+
+
+
+
+			//sf::Time elapsedTime = clock.restart();
+			//timeSinceLastUpdate += elapsedTime;
+			////deltaTime += elapsedTime.asSeconds;
+			//while (timeSinceLastUpdate > TimePerFrame)
+			//{
+			//	timeSinceLastUpdate -= TimePerFrame;
+			//	update(TimePerFrame);
+			//	//processEvents(); Handle Input Here
+			//	for (std::vector<Actor*>::iterator it = actors.begin(); it != actors.end(); ++it)
+			//	{
+			//		(*it)->Update(TimePerFrame.asSeconds());
+			//		
+			//	}
+			//	
+			//	d.RenderActors(&actors);
+			//}
 
 			//updateStatistics(elapsedTime);
 			//render();

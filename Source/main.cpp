@@ -40,6 +40,8 @@ int main()
 		//sounds.setBuffer(buffers);
 		//sounds.play();
 
+		//Orange.LoadLevel("SceneXML.xml");
+		/*^^^^^^ YOU NEED THIS LINE ^^^^^*/
 		ss.buildScene(Orange, lua);
 		//Orange->CreateXML();
 		Orange->Run();

@@ -65,10 +65,11 @@ void Draw::RenderSplashScreen()
 		if (time >= sf::seconds(2.f)) {
 			window.close();
 		}
-
+	
 		window.clear();
 		window.draw(sp);
 		window.display();
+		
 	}
 }
 

@@ -14,11 +14,14 @@
     </oRigidbody>
   </GameObject>
   <GameObject id="2">
-    	<oTransform>
+    <oTransform>
       <Position x="2" y="2"/>
       <Rotation x="0" y="90"/>
       <Scale x="2" y="1"/>
     </oTransform>
+    <oScript>
+      <FileName "myScript.lua"/>
+    </oScript>
     <Sprite>Enemy</Sprite>
    <oRigidbody>
 	<Mass>1</Mass>
