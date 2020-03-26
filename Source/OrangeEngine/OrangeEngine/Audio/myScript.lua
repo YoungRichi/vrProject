@@ -1,1 +1,0 @@
-Scale(transform, 20.0, 1.0)

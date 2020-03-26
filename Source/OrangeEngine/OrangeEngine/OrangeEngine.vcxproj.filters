@@ -13,208 +13,189 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Actors">
-      <UniqueIdentifier>{e7148f99-4392-492b-980a-1dfc1ab40cdb}</UniqueIdentifier>
+    <Filter Include="Resource Files\Engine">
+      <UniqueIdentifier>{79280948-c911-4167-8fd3-1d7f637a1ca0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Animation">
-      <UniqueIdentifier>{7d7b2347-b059-4c7d-a8bb-5446657f34cd}</UniqueIdentifier>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{dc30c454-d276-47e7-b146-285024573ad9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components">
-      <UniqueIdentifier>{c1141a7a-3408-4fe5-9539-6d17271fa2ba}</UniqueIdentifier>
+    <Filter Include="Header Files\Unity">
+      <UniqueIdentifier>{93f13321-de6b-4f00-8620-80f28788a6f7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Actor">
-      <UniqueIdentifier>{238bb14c-62d6-473a-9268-40e61e1541df}</UniqueIdentifier>
+    <Filter Include="Resource Files\System">
+      <UniqueIdentifier>{c7a6fd2d-ecb0-49f4-a228-a5a7b2660643}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Transform">
-      <UniqueIdentifier>{82b58641-4b2d-4984-b3f6-6e1e3bdf1536}</UniqueIdentifier>
+    <Filter Include="Header Files\System">
+      <UniqueIdentifier>{571e6117-a15e-4ddd-8228-06c804b5ebfb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Draw">
-      <UniqueIdentifier>{03aa6ae1-2d7f-49ef-8bb9-835c7cce53af}</UniqueIdentifier>
+    <Filter Include="Header Files\ResourceManager">
+      <UniqueIdentifier>{8422aba5-cfaa-4cfa-9bba-afc587f1fdd4}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Shape">
-      <UniqueIdentifier>{e3b31332-d94b-427c-a938-7406dc3cd0de}</UniqueIdentifier>
+    <Filter Include="Header Files\Component">
+      <UniqueIdentifier>{3b3b6ada-2c2a-435c-8833-dfddd98100fb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Input">
-      <UniqueIdentifier>{83efc4fb-8860-4f18-8296-230454388839}</UniqueIdentifier>
+    <Filter Include="Resource Files\Component">
+      <UniqueIdentifier>{aaaf63c3-3b51-4f29-8e7c-a5ea7971f3be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Utility">
-      <UniqueIdentifier>{8c19fa96-39cc-43b8-8ea7-9cade01b5e4e}</UniqueIdentifier>
+    <Filter Include="Header Files\Component\Aduio">
+      <UniqueIdentifier>{103383a2-3f69-45f4-a7d8-cdd311975dc8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Scripts">
-      <UniqueIdentifier>{3d14aab4-bca2-409d-905c-b497f6367311}</UniqueIdentifier>
+    <Filter Include="Resource Files\Component\Audio">
+      <UniqueIdentifier>{f596f5ec-4b0c-48a9-accf-f103f39ae91b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\Audio">
-      <UniqueIdentifier>{f3145f1e-ec5c-40db-bb22-06626f56ffb7}</UniqueIdentifier>
+    <Filter Include="Header Files\Component\Transform">
+      <UniqueIdentifier>{9fac34a7-a7c4-4902-84c1-ac5b25bfd6b6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Components\TInyXML">
-      <UniqueIdentifier>{c7bef3e7-855d-4152-b824-d41e3b383c55}</UniqueIdentifier>
+    <Filter Include="Resource Files\Component\Transform">
+      <UniqueIdentifier>{5c636271-26c5-4459-989e-1ee0b2ace849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Component\Script">
+      <UniqueIdentifier>{86c15a8b-4512-451c-8b74-f0546108dd3c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\Script">
+      <UniqueIdentifier>{610df960-4d0e-4313-aa63-0ed109c78c2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\Input">
+      <UniqueIdentifier>{b413753a-bdef-4ca3-8edf-10bec637035e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\System\Input">
+      <UniqueIdentifier>{6d368a41-f06c-41ba-a893-98360b2f48e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Component\Render">
+      <UniqueIdentifier>{e4fa6567-dd8c-47b1-b0b5-c9d98b0c67e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Component\Render">
+      <UniqueIdentifier>{14674309-929f-4afd-8513-29580cb1ff4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\RigidBody">
+      <UniqueIdentifier>{212ca0ea-db7d-490f-af1c-4affe26136c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\System\RigidBody">
+      <UniqueIdentifier>{f4813fac-8158-4e0e-9a81-e623737d524d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\Physic">
+      <UniqueIdentifier>{3e8cf531-7104-430a-8848-d07cca73b454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\System\Physic">
+      <UniqueIdentifier>{ae436955-8100-42e6-9990-a3eb950b063d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Actor">
+      <UniqueIdentifier>{0bc86f3c-71f6-4f07-8851-a54387e2681e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Actor">
+      <UniqueIdentifier>{5415adc9-053f-45a5-819b-0574170b2017}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\JsonLoader">
+      <UniqueIdentifier>{ced4b390-089d-437f-a0ea-b2a40a59321e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\JsonLoader">
+      <UniqueIdentifier>{e7ed47b6-f51d-4e4b-a23a-0c8e3fc786a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\System\Splash">
+      <UniqueIdentifier>{696f23fa-5b9f-4a71-b2b8-c4c9046500e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\System\Splash">
+      <UniqueIdentifier>{2c6997ab-e8bd-47e0-a3f6-942194c8277e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\main.cpp">
+    <ClCompile Include="Include\Engine\GameCodeApp.cpp">
+      <Filter>Resource Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Engine\OrangeEngine.cpp">
+      <Filter>Resource Files\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Components\Audio\AudioComponent.cpp">
+      <Filter>Resource Files\Component\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Components\Transform\TransformComponent.cpp">
+      <Filter>Resource Files\Component\Transform</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Components\Script\ScriptComponent.cpp">
+      <Filter>Resource Files\Component\Script</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\System\Input\InputSystem.cpp">
+      <Filter>Resource Files\System\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\Components\Render\RenderComponent.cpp">
+      <Filter>Resource Files\Component\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\System\RigidBody\RigidBody.cpp">
+      <Filter>Resource Files\System\RigidBody</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\System\Physic\PhysicSystem.cpp">
+      <Filter>Resource Files\System\Physic</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\GameObject\GameObject.cpp">
+      <Filter>Resource Files\Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Include\JsonLoader\JsonParser.cpp">
+      <Filter>Resource Files\JsonLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\Actors\SpecialAbilityComponent.cpp">
-      <Filter>Actors</Filter>
+    <ClCompile Include="Include\System\SystemInit.cpp">
+      <Filter>Resource Files\System</Filter>
     </ClCompile>
-    <ClCompile Include="PrinterScriptingComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SplashScreen.cpp">
-      <Filter>Animation</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\OrangeEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Actor.cpp">
-      <Filter>Components\Actor</Filter>
-    </ClCompile>
-    <ClCompile Include="ScriptComponent.cpp">
-      <Filter>Actors</Filter>
-    </ClCompile>
-    <ClCompile Include="Draw.cpp">
-      <Filter>Draw</Filter>
-    </ClCompile>
-    <ClCompile Include="ShapeComponent.cpp">
-      <Filter>Components\Shape</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene1.cpp">
-      <Filter>Draw</Filter>
-    </ClCompile>
-    <ClCompile Include="GameObjectManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="oTransform.cpp">
-      <Filter>Components\Transform</Filter>
-    </ClCompile>
-    <ClCompile Include="oRigidBody.cpp">
-      <Filter>Components</Filter>
-    </ClCompile>
-    <ClCompile Include="PhysicsEngine.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ActorComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="oInputManager.cpp">
-      <Filter>Components\Input</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaStateManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="_string.cpp">
-      <Filter>Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="RectangleComponent.cpp">
-      <Filter>Components\Shape</Filter>
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceHolder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AudioManager.cpp">
-      <Filter>Components\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="AudioComponent.cpp">
-      <Filter>Components\Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyxml\tinystr.cpp">
-      <Filter>Components\TInyXML</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyxml\tinyxml.cpp">
-      <Filter>Components\TInyXML</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyxml\tinyxmlerror.cpp">
-      <Filter>Components\TInyXML</Filter>
-    </ClCompile>
-    <ClCompile Include="tinyxml\tinyxmlparser.cpp">
-      <Filter>Components\TInyXML</Filter>
+    <ClCompile Include="Include\System\Splash\SplashScreen.cpp">
+      <Filter>Resource Files\System\Splash</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Actors\SpecialAbilityComponent.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\Unity\Unity.h">
+      <Filter>Header Files\Unity</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\Actors\AbilitiesInterface.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\Engine\GameCodeApp.h">
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="PrinterScriptingComponent.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\Engine\OrangeEngine.h">
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
-    <ClInclude Include="SplashScreen.h">
-      <Filter>Animation</Filter>
+    <ClInclude Include="Include\ResourceManager\ResourceManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
     </ClInclude>
-    <ClInclude Include="ActorComponent.h">
-      <Filter>Components\Actor</Filter>
+    <ClInclude Include="Include\Components\BaseComponent.h">
+      <Filter>Header Files\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Actor.h">
-      <Filter>Components\Actor</Filter>
+    <ClInclude Include="Include\Components\Audio\AudioComponent.h">
+      <Filter>Header Files\Component\Aduio</Filter>
     </ClInclude>
-    <ClInclude Include="ScriptComponent.h">
-      <Filter>Actors</Filter>
+    <ClInclude Include="ThirdPartyPlugin\sol2\sol.hpp">
+      <Filter>Header Files\Unity</Filter>
     </ClInclude>
-    <ClInclude Include="Draw.h">
-      <Filter>Draw</Filter>
+    <ClInclude Include="ThirdPartyPlugin\sol2\sol_forward.hpp">
+      <Filter>Header Files\Unity</Filter>
     </ClInclude>
-    <ClInclude Include="ShapeComponent.h">
-      <Filter>Components\Shape</Filter>
+    <ClInclude Include="Include\Components\Transform\TransformComponent.h">
+      <Filter>Header Files\Component\Transform</Filter>
     </ClInclude>
-    <ClInclude Include="Scene1.h">
-      <Filter>Draw</Filter>
+    <ClInclude Include="Include\Components\Script\ScriptComponent.h">
+      <Filter>Header Files\Component\Script</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjectManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\System\Input\InputSystem.h">
+      <Filter>Header Files\System\Input</Filter>
     </ClInclude>
-    <ClInclude Include="oTransform.h">
-      <Filter>Components\Transform</Filter>
+    <ClInclude Include="Include\Components\Render\RenderComponent.h">
+      <Filter>Header Files\Component\Render</Filter>
     </ClInclude>
-    <ClInclude Include="oRigidBody.h">
-      <Filter>Components</Filter>
+    <ClInclude Include="Include\System\RigidBody\RigidBody.h">
+      <Filter>Header Files\System\RigidBody</Filter>
     </ClInclude>
-    <ClInclude Include="PhysicsEngine.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\System\Physic\PhysicSystem.h">
+      <Filter>Header Files\System\Physic</Filter>
     </ClInclude>
-    <ClInclude Include="oInputManager.h">
-      <Filter>Components\Input</Filter>
+    <ClInclude Include="Include\GameObject\GameObject.h">
+      <Filter>Header Files\Actor</Filter>
     </ClInclude>
-    <ClInclude Include="LuaStateManager.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\JsonLoader\JsonParser.h">
+      <Filter>Header Files\JsonLoader</Filter>
     </ClInclude>
-    <ClInclude Include="_string.h">
-      <Filter>Utility</Filter>
+    <ClInclude Include="Include\System\SystemInit.h">
+      <Filter>Header Files\System</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\OrangeEngine.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Include\System\Splash\SplashScreen.h">
+      <Filter>Header Files\System\Splash</Filter>
     </ClInclude>
-    <ClInclude Include="RectangleComponent.h">
-      <Filter>Components\Shape</Filter>
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceHolder.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioComponent.h">
-      <Filter>Components\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioManager.h">
-      <Filter>Components\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="tinyxml\tinystr.h">
-      <Filter>Components\TInyXML</Filter>
-    </ClInclude>
-    <ClInclude Include="tinyxml\tinyxml.h">
-      <Filter>Components\TInyXML</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="tinyxml\testSceneXML.xml">
-      <Filter>Components\TInyXML</Filter>
-    </Xml>
-    <Xml Include="tinyxml\SceneXML.xml">
-      <Filter>Components\TInyXML</Filter>
-    </Xml>
   </ItemGroup>
 </Project>

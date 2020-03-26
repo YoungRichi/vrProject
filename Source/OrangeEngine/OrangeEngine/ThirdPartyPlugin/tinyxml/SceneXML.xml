@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<level>
+  <GameObject id="1">
+    <oTransform>
+      <Position x="0" y="1"/>
+      <Rotation x="90" y="0"/>
+      <Scale x="3" y="1"/>
+    </oTransform>
+    <Sprite>Player</Sprite>
+   <oRigidbody>
+	<Mass>1</Mass>
+	<Bounciness>1</Bounciness>
+	<Obey_Gravity>true</Obey_Gravity>
+    </oRigidbody>
+  </GameObject>
+  <GameObject id="2">
+    <oTransform>
+      <Position x="2" y="2"/>
+      <Rotation x="0" y="90"/>
+      <Scale x="2" y="1"/>
+    </oTransform>
+    <oScript>
+      <FileName "myScript.lua"/>
+    </oScript>
+    <Sprite>Enemy</Sprite>
+   <oRigidbody>
+	<Mass>1</Mass>
+	<Bounciness>1</Bounciness>
+	<Obey_Gravity>false</Obey_Gravity>
+    </oRigidbody>
+  </GameObject>
+</level>
