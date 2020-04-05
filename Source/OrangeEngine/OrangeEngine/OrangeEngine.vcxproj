@@ -33,6 +33,10 @@
     <ClCompile Include="Include\System\Splash\SplashScreen.cpp" />
     <ClCompile Include="Include\System\SystemInit.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinystr.cpp" />
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinyxmlparser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Components\Audio\AudioComponent.h" />
@@ -53,6 +57,8 @@
     <ClInclude Include="Include\Unity\Unity.h" />
     <ClInclude Include="ThirdPartyPlugin\sol2\sol.hpp" />
     <ClInclude Include="ThirdPartyPlugin\sol2\sol_forward.hpp" />
+    <ClInclude Include="ThirdPartyPlugin\tinyxml\tinystr.h" />
+    <ClInclude Include="ThirdPartyPlugin\tinyxml\tinyxml.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

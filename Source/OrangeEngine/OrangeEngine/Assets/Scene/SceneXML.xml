@@ -19,10 +19,13 @@
       <Rotation x="0" y="90"/>
       <Scale x="2" y="1"/>
     </oTransform>
+    <oScript>
+      <FileName "myScript.lua"/>
+    </oScript>
     <Sprite>Enemy</Sprite>
    <oRigidbody>
-	<Mass>2</Mass>
-	<Bounciness>2</Bounciness>
+	<Mass>1</Mass>
+	<Bounciness>1</Bounciness>
 	<Obey_Gravity>false</Obey_Gravity>
     </oRigidbody>
   </GameObject>

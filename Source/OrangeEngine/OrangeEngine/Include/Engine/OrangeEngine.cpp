@@ -209,3 +209,182 @@ void OrangeEngine::SetScriptComponent(std::string objName, std::string scriptNam
 
 	script_objects.push_back(gameObject);
 }
+
+void OrangeEngine::SetTinyXML()
+{
+	TiXmlDocument doc("Assets/Scene/SceneXML.xml");
+	doc.LoadFile();
+
+	TiXmlElement *l_pRootElement = doc.RootElement();
+
+	std::cout << "________Scene________" << std::endl;
+
+	if (NULL != l_pRootElement)
+	{
+		// game object
+		TiXmlElement *l_pGameObject = l_pRootElement->FirstChildElement("GameObject");
+
+		if (NULL != l_pGameObject)
+		{
+			// sprite
+			TiXmlElement *l_pSprite = l_pGameObject->FirstChildElement("Sprite");
+
+			if (NULL != l_pSprite)
+			{
+				std::cout << "GameObject = " << " " << l_pSprite->GetText() << endl;
+			}
+
+			// transform
+			TiXmlElement *l_pTransform = l_pGameObject->FirstChildElement("oTransform");
+
+			if (NULL != l_pTransform)
+			{
+				//position rotation scale
+				TiXmlElement *l_pPosition = l_pTransform->FirstChildElement("Position");
+				TiXmlElement *l_pRotation = l_pTransform->FirstChildElement("Rotation");
+				TiXmlElement *l_pScale = l_pTransform->FirstChildElement("Scale");
+
+				std::cout << "Transform: " << std::endl;
+
+				if (NULL != l_pPosition)
+				{
+					//positionX positionY
+					std::cout << "Position X:  = " << " " << l_pPosition->Attribute("x") << endl;
+					std::cout << "Position Y:  = " << " " << l_pPosition->Attribute("y") << endl;
+
+				}
+
+				if (NULL != l_pRotation)
+				{
+					//positionX positionY
+					std::cout << "Rotation X:  = " << " " << l_pRotation->Attribute("x") << endl;
+					std::cout << "Rotation Y:  = " << " " << l_pRotation->Attribute("y") << endl;
+
+				}
+
+				if (NULL != l_pScale)
+				{
+					//positionX positionY
+					std::cout << "Scale X:  = " << " " << l_pScale->Attribute("x") << endl;
+					std::cout << "Scale Y:  = " << " " << l_pScale->Attribute("y") << endl;
+
+				}
+
+			}
+
+			std::cout << "Rigidbody: " << std::endl;
+
+			// rigidbody
+			TiXmlElement *l_pRigidbody = l_pGameObject->FirstChildElement("oRigidbody");
+
+			if (NULL != l_pRigidbody)
+			{
+				TiXmlElement *l_pMass = l_pRigidbody->FirstChildElement("Mass");
+				TiXmlElement *l_pBounciness = l_pRigidbody->FirstChildElement("Bounciness");
+				TiXmlElement *l_pObey_Gravity = l_pRigidbody->FirstChildElement("Obey_Gravity");
+
+				if (NULL != l_pMass)
+				{
+					std::cout << "Mass = " << " " << l_pMass->GetText() << endl;
+				}
+
+				if (NULL != l_pBounciness)
+				{
+					std::cout << "Bounciness = " << " " << l_pBounciness->GetText() << endl;
+				}
+
+				if (NULL != l_pObey_Gravity)
+				{
+					std::cout << "Obeys gravity = " << " " << l_pObey_Gravity->GetText() << endl;
+				}
+
+			}
+
+			l_pGameObject = l_pGameObject->NextSiblingElement("GameObject");
+		}
+
+		std::cout << "__________________" << std::endl;
+
+		if (NULL != l_pGameObject)
+		{
+			// sprite
+			TiXmlElement *l_pSprite = l_pGameObject->FirstChildElement("Sprite");
+
+			if (NULL != l_pSprite)
+			{
+				std::cout << "GameObject = " << " " << l_pSprite->GetText() << endl;
+			}
+
+			// transform
+			TiXmlElement *l_pTransform = l_pGameObject->FirstChildElement("oTransform");
+
+			if (NULL != l_pTransform)
+			{
+				//position rotation scale
+				TiXmlElement *l_pPosition = l_pTransform->FirstChildElement("Position");
+				TiXmlElement *l_pRotation = l_pTransform->FirstChildElement("Rotation");
+				TiXmlElement *l_pScale = l_pTransform->FirstChildElement("Scale");
+
+				std::cout << "Transform: " << std::endl;
+
+				if (NULL != l_pPosition)
+				{
+					//positionX positionY
+					std::cout << "Position X:  = " << " " << l_pPosition->Attribute("x") << endl;
+					std::cout << "Position Y:  = " << " " << l_pPosition->Attribute("y") << endl;
+
+				}
+
+				if (NULL != l_pRotation)
+				{
+					//positionX positionY
+					std::cout << "Rotation X:  = " << " " << l_pRotation->Attribute("x") << endl;
+					std::cout << "Rotation Y:  = " << " " << l_pRotation->Attribute("y") << endl;
+
+				}
+
+				if (NULL != l_pScale)
+				{
+					//positionX positionY
+					std::cout << "Scale X:  = " << " " << l_pScale->Attribute("x") << endl;
+					std::cout << "Scale Y:  = " << " " << l_pScale->Attribute("y") << endl;
+
+				}
+
+			}
+			std::cout << "Rigidbody: " << std::endl;
+
+			// rigidbody
+			TiXmlElement *l_pRigidbody = l_pGameObject->FirstChildElement("oRigidbody");
+
+			if (NULL != l_pRigidbody)
+			{
+				TiXmlElement *l_pMass = l_pRigidbody->FirstChildElement("Mass");
+				TiXmlElement *l_pBounciness = l_pRigidbody->FirstChildElement("Bounciness");
+				TiXmlElement *l_pObey_Gravity = l_pRigidbody->FirstChildElement("Obey_Gravity");
+
+				if (NULL != l_pMass)
+				{
+					std::cout << "Mass = " << " " << l_pMass->GetText() << endl;
+				}
+
+				if (NULL != l_pBounciness)
+				{
+					std::cout << "Bounciness = " << " " << l_pBounciness->GetText() << endl;
+				}
+
+				if (NULL != l_pObey_Gravity)
+				{
+					std::cout << "Obeys gravity = " << " " << l_pObey_Gravity->GetText() << endl;
+				}
+
+			}
+
+			l_pGameObject = l_pGameObject->NextSiblingElement("GameObject");
+		}
+	}
+
+}
+
+
+

@@ -4,6 +4,7 @@
 #include "../System/Physic/PhysicSystem.h"
 #include "../System/Input/InputSystem.h"
 #include "../System/Splash/SplashScreen.h"
+#include "../tinyxml/tinyxml.h"
 
 class OrangeEngine
 {
@@ -36,6 +37,7 @@ public:
 
 	void SetScriptComponent(std::string objName, std::string scriptName);
 
+	void SetTinyXML();
 
 	GameObject* SceneManager;
 	PhysicSystem* PhysicsEngine;

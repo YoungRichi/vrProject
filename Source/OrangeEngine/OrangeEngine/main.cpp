@@ -26,6 +26,8 @@ int main()
 	//Creating window
 	OrangeEngine GAME_ENGINE;
 
+	GAME_ENGINE.SetTinyXML();
+
 	CreateGameObjects(GAME_ENGINE);
 
 	GAME_ENGINE.InitWindow();
@@ -44,5 +46,4 @@ void CreateGameObjects(OrangeEngine &engine)
 	engine.SetPhysicsComponent("Player", 2.0f, true, sf::Vector2f(0.0f, 0.0f));
 	engine.SetScriptComponent("Player", ResHolder.Jump);
 	engine.SetAudioComponent("Player", ResHolder.bgm, true, true);
-
 }

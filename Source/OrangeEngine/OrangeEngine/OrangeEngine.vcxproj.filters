@@ -97,6 +97,9 @@
     <Filter Include="Resource Files\System\Splash">
       <UniqueIdentifier>{2c6997ab-e8bd-47e0-a3f6-942194c8277e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\TinyXML">
+      <UniqueIdentifier>{61ec1165-052f-4024-98c6-51e5e12a4f28}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Include\Engine\GameCodeApp.cpp">
@@ -141,6 +144,18 @@
     <ClCompile Include="Include\System\Splash\SplashScreen.cpp">
       <Filter>Resource Files\System\Splash</Filter>
     </ClCompile>
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinystr.cpp">
+      <Filter>Resource Files\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinyxml.cpp">
+      <Filter>Resource Files\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinyxmlerror.cpp">
+      <Filter>Resource Files\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="ThirdPartyPlugin\tinyxml\tinyxmlparser.cpp">
+      <Filter>Resource Files\TinyXML</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include\Unity\Unity.h">
@@ -151,9 +166,6 @@
     </ClInclude>
     <ClInclude Include="Include\Engine\OrangeEngine.h">
       <Filter>Header Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="Include\ResourceManager\ResourceManager.h">
-      <Filter>Header Files\ResourceManager</Filter>
     </ClInclude>
     <ClInclude Include="Include\Components\BaseComponent.h">
       <Filter>Header Files\Component</Filter>
@@ -196,6 +208,15 @@
     </ClInclude>
     <ClInclude Include="Include\System\Splash\SplashScreen.h">
       <Filter>Header Files\System\Splash</Filter>
+    </ClInclude>
+    <ClInclude Include="Include\ResourceManager\ResourceManager.h">
+      <Filter>Header Files\ResourceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdPartyPlugin\tinyxml\tinystr.h">
+      <Filter>Resource Files\TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="ThirdPartyPlugin\tinyxml\tinyxml.h">
+      <Filter>Resource Files\TinyXML</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
