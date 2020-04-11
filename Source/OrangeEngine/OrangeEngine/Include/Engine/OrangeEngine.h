@@ -39,12 +39,15 @@ public:
 
 	void SetTinyXML();
 
+	void GameOver();
+
 	GameObject* SceneManager;
 	PhysicSystem* PhysicsEngine;
 
-
 protected:
 	sf::RenderWindow _mainWindow;
+
+	float timer;
 
 private:
 	void Update(float deltaTime);
@@ -54,6 +57,9 @@ private:
 
 	float SplashClock = 0.0f;
 	GameObject *Bird;
+	GameObject *timerObject;
+	GameObject *Gameover;
+	GameObject *Background;
 };
 
 

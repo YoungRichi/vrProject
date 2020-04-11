@@ -100,6 +100,12 @@
     <Filter Include="Resource Files\TinyXML">
       <UniqueIdentifier>{61ec1165-052f-4024-98c6-51e5e12a4f28}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\SceneManager">
+      <UniqueIdentifier>{f3bb76b3-39f5-448e-ac1b-aea7b7a56a5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\SceneManager">
+      <UniqueIdentifier>{a0d379ab-d6db-4a14-8401-913b94858e31}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Include\Engine\GameCodeApp.cpp">
@@ -155,6 +161,9 @@
     </ClCompile>
     <ClCompile Include="ThirdPartyPlugin\tinyxml\tinyxmlparser.cpp">
       <Filter>Resource Files\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="include\SceneManager\SceneManager.cpp">
+      <Filter>Resource Files\SceneManager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -217,6 +226,9 @@
     </ClInclude>
     <ClInclude Include="ThirdPartyPlugin\tinyxml\tinyxml.h">
       <Filter>Resource Files\TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SceneManager\SceneManager.h">
+      <Filter>Header Files\SceneManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

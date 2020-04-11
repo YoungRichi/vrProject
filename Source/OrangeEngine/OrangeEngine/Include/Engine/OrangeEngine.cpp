@@ -42,8 +42,7 @@ void OrangeEngine::gameLoop()
 
 			if (SplashClock > 3.5f)
 			{
-				
-				render();
+				GameOver();
 				eventprocessor();
 				PhysicsEngine->UpdatePhysics(TimePerFrame.asSeconds());
 				SceneManager->Update(TimePerFrame);
@@ -52,6 +51,7 @@ void OrangeEngine::gameLoop()
 
 		Update(TimePerFrame.asSeconds());
 		SplashClock += dt.asSeconds();
+		timer += dt.asSeconds();
 		render();
 
 	}
@@ -68,7 +68,6 @@ void OrangeEngine::render()
 	{
 
 		_mainWindow.clear();
-		
 		SceneManager->RenderGO(_mainWindow);
 		_mainWindow.display();
 
@@ -89,13 +88,26 @@ void OrangeEngine::eventprocessor()
 
 void OrangeEngine::InitWindow()
 {
+	timerObject = SceneManager->FindGameObject("Time");
+	Gameover = SceneManager->FindGameObject("gameOver");
+	Background = SceneManager->FindGameObject("background");
 	Bird = SceneManager->FindGameObject("Bird");
 	gameLoop();
 }
 
 void OrangeEngine::Update(float dt)
 {
-
+	for (std::vector<GameObject*>::iterator it = script_objects.begin(); it != script_objects.end(); ++it)
+	{
+		float objPositionX = (*it)->GetComponent(Transform_Component)->getPosition().x;
+		bool  outOfWindow = (*it)->GetComponent(Script_Component)->RunScript("OutOfView", objPositionX);
+		if (outOfWindow)
+		{
+			sf::Vector2f obPosition(_mainWindow.getSize().x * 0.5f, (*it)->GetComponent(Transform_Component)->getPosition().y);
+			(*it)->GetComponent(Physics_Component)->setPosition(obPosition);
+		}
+	}
+	timerObject->GetComponent(Render_Component)->SetText("Time: " + to_string((int)timer));
 
 	auto input = InputSystem::GetInstance();
 
@@ -113,7 +125,18 @@ void OrangeEngine::Update(float dt)
 
 }
 
+void OrangeEngine::GameOver()
+{
 
+
+	if (Bird->GetComponent(Physics_Component)->GetTriggeredCollision())
+	{
+		Gameover->GetComponent(Render_Component)->SetText("GAME OVER!");
+		Background->AddChild(Gameover);
+		TimePerFrame = sf::seconds(0);
+		render();
+	}
+}
 
 //Create Game Objects
 void OrangeEngine::CreateObject(std::string ObjectName, float x, float y)

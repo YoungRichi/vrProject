@@ -11,7 +11,7 @@ enum Component_Definition
 struct ResourceHolder
 {
 	//image path
-	std::string Fart = "Assets/Images/Fart.png";
+	std::string Cloud = "Assets/Images/Fart.png";
 	std::string RoadSign = "Assets/Images/RoadSign.png";
 	std::string bird = "Assets/Images/bird.png";
 	std::string Splash = "Assets/Images/SplashScreen.PNG";
@@ -26,4 +26,6 @@ struct ResourceHolder
 
 	//script
 	std::string Jump = "Assets/Script/Jump.lua";
+
+	std::string MoveToLeft = "Assets/Script/MoveToLeft.lua";
 };

@@ -27,6 +27,7 @@
     <ClCompile Include="Include\Engine\OrangeEngine.cpp" />
     <ClCompile Include="Include\GameObject\GameObject.cpp" />
     <ClCompile Include="Include\JsonLoader\JsonParser.cpp" />
+    <ClCompile Include="include\SceneManager\SceneManager.cpp" />
     <ClCompile Include="Include\System\Input\InputSystem.cpp" />
     <ClCompile Include="Include\System\Physic\PhysicSystem.cpp" />
     <ClCompile Include="Include\System\RigidBody\RigidBody.cpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="Include\GameObject\GameObject.h" />
     <ClInclude Include="Include\JsonLoader\JsonParser.h" />
     <ClInclude Include="Include\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="include\SceneManager\SceneManager.h" />
     <ClInclude Include="Include\System\Input\InputSystem.h" />
     <ClInclude Include="Include\System\Physic\PhysicSystem.h" />
     <ClInclude Include="Include\System\RigidBody\RigidBody.h" />
