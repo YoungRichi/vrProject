@@ -1,6 +1,6 @@
 
 
-function OutOfView(objHorizontal)
+function MoveToLeft(objHorizontal)
 
 	if objHorizontal < -550 then 		
 		return true 

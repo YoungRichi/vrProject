@@ -100,7 +100,7 @@ void OrangeEngine::Update(float dt)
 	for (std::vector<GameObject*>::iterator it = script_objects.begin(); it != script_objects.end(); ++it)
 	{
 		float objPositionX = (*it)->GetComponent(Transform_Component)->getPosition().x;
-		bool  outOfWindow = (*it)->GetComponent(Script_Component)->RunScript("OutOfView", objPositionX);
+		bool  outOfWindow = (*it)->GetComponent(Script_Component)->RunScript("MoveToLeft", objPositionX);
 		if (outOfWindow)
 		{
 			sf::Vector2f obPosition(_mainWindow.getSize().x * 0.5f, (*it)->GetComponent(Transform_Component)->getPosition().y);

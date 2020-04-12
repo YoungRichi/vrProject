@@ -56,17 +56,35 @@ void CreateGameObjects(OrangeEngine &engine)
 	engine.SetTextureComponent("gameOver", sf::Vector2f(0, 0), sf::Color::Red, "", "", 100);
 	
 	float xPos = 0.0f;
-	float pipeDist_x = 250.0f;
+	float Dist_X = 250.0f;
 	float velocity = -80.f;
 
-	engine.CreateObject("3Cloud1", xPos+500, -180.0f);
+	engine.CreateObject("3Cloud1", xPos+500, 0.0f);
 	engine.SetTextureComponent("3Cloud1", sf::Vector2f(90.f, 90.f), sf::Color::White, "", ResHolder.Cloud);
 	engine.SetPhysicsComponent("3Cloud1", 0.0f, false, sf::Vector2f(velocity, 0.0f));
 	engine.SetScriptComponent("3Cloud1", ResHolder.MoveToLeft);
-	
+	engine.SetObjectParent("background", "3Cloud1");
+
+
+
+	engine.CreateObject("3Cloud2", xPos, -180.0f);
+	engine.SetTextureComponent("3Cloud2", sf::Vector2f(90.f, 90.f), sf::Color::White, "", ResHolder.Cloud);
+	engine.SetPhysicsComponent("3Cloud2", 0.0f, false, sf::Vector2f(velocity, 0.0f));
+	engine.SetScriptComponent("3Cloud2", ResHolder.MoveToLeft);
+	engine.SetObjectParent("background", "3Cloud2");
+
+	engine.CreateObject("3Cloud3", xPos, 50);
+	engine.SetTextureComponent("3Cloud3", sf::Vector2f(90.f, 90.f), sf::Color::White, "", ResHolder.Cloud);
+	engine.SetPhysicsComponent("3Cloud3", 0.0f, false, sf::Vector2f(velocity, 0.0f));
+	engine.SetScriptComponent("3Cloud3", ResHolder.MoveToLeft);
+	engine.SetObjectParent("background", "3Cloud3");
+
+	xPos += Dist_X;
 
 	engine.CreateObject("3RoadSign1", xPos, 350.0f);
 	engine.SetTextureComponent("3RoadSign1", sf::Vector2f(90.f, 300.0f), sf::Color::White, "", ResHolder.RoadSign);
 	engine.SetPhysicsComponent("3RoadSign1", 0.0f, false, sf::Vector2f(velocity, 0.0f));
 	engine.SetScriptComponent("3RoadSign1", ResHolder.MoveToLeft);
+	
+
 }
