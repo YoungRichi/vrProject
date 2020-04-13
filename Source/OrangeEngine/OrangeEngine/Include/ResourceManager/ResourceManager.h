@@ -16,8 +16,9 @@ struct ResourceHolder
 	std::string bird = "Assets/Images/bird.png";
 	std::string Splash = "Assets/Images/SplashScreen.PNG";
 	std::string background = "Assets/Images/background.png";
+	std::string ground = "Assets/Images/ground.png";
 
-	//background music path
+	// music path
 	std::string bgm = "Assets/Audio/MarioBackgroundMusic.wav";
 	std::string hit = "Assets/Audio/Hit.ogg";
 

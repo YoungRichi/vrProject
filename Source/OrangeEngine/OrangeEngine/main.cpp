@@ -54,7 +54,8 @@ void CreateGameObjects(OrangeEngine &engine)
 
 	engine.CreateObject("gameOver", -250, 0);
 	engine.SetTextureComponent("gameOver", sf::Vector2f(0, 0), sf::Color::Red, "", "", 100);
-	
+
+
 	float xPos = 0.0f;
 	float Dist_X = 250.0f;
 	float velocity = -80.f;
@@ -67,13 +68,13 @@ void CreateGameObjects(OrangeEngine &engine)
 
 
 
-	engine.CreateObject("3Cloud2", xPos, -180.0f);
+	engine.CreateObject("3Cloud2", xPos+200, -180.0f);
 	engine.SetTextureComponent("3Cloud2", sf::Vector2f(90.f, 90.f), sf::Color::White, "", ResHolder.Cloud);
 	engine.SetPhysicsComponent("3Cloud2", 0.0f, false, sf::Vector2f(velocity, 0.0f));
 	engine.SetScriptComponent("3Cloud2", ResHolder.MoveToLeft);
 	engine.SetObjectParent("background", "3Cloud2");
 
-	engine.CreateObject("3Cloud3", xPos, 50);
+	engine.CreateObject("3Cloud3", xPos+100, 100.0f);
 	engine.SetTextureComponent("3Cloud3", sf::Vector2f(90.f, 90.f), sf::Color::White, "", ResHolder.Cloud);
 	engine.SetPhysicsComponent("3Cloud3", 0.0f, false, sf::Vector2f(velocity, 0.0f));
 	engine.SetScriptComponent("3Cloud3", ResHolder.MoveToLeft);
@@ -81,10 +82,21 @@ void CreateGameObjects(OrangeEngine &engine)
 
 	xPos += Dist_X;
 
-	engine.CreateObject("3RoadSign1", xPos, 350.0f);
+	engine.CreateObject("3RoadSign1", xPos, 330.0f);
 	engine.SetTextureComponent("3RoadSign1", sf::Vector2f(90.f, 300.0f), sf::Color::White, "", ResHolder.RoadSign);
-	engine.SetPhysicsComponent("3RoadSign1", 0.0f, false, sf::Vector2f(velocity, 0.0f));
+	engine.SetPhysicsComponent("3RoadSign1", 100.0f, false, sf::Vector2f(velocity, 0.0f));
 	engine.SetScriptComponent("3RoadSign1", ResHolder.MoveToLeft);
 	
+
+	engine.CreateObject("3ground1", 0.0, 330.0f);
+	engine.SetTextureComponent("3ground1", sf::Vector2f(1100.0f, 90.f), sf::Color::White, "", ResHolder.ground);
+	engine.SetPhysicsComponent("3ground1", 100.0f, false, sf::Vector2f(0.0, 0.0f));
+	engine.SetObjectParent("background", "3ground1");
+
+
+	engine.CreateObject("3ground2", 0.0, -330.0f);
+	engine.SetTextureComponent("3ground2", sf::Vector2f(1100.0f, 90.f), sf::Color::White, "", ResHolder.ground);
+	engine.SetPhysicsComponent("3ground2", 100.0f, false, sf::Vector2f(0.0, 0.0f));
+	engine.SetObjectParent("background", "3ground2");
 
 }
